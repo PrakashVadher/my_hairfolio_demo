@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>/salons</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="page">
+
+      <div id="header-outer">
+        <div id="header">
+          <a href="/docs" id="logo" title="Home">Hairfolio API Docs</a>
+
+          <ul id="title-nav">
+            <li><a href="/docs/overview.html">Overview</a></li>
+            <li><a href="/docs/authentication.html">Authentication</a></li>
+            <li><a href="/docs/index.html">Resources</a></li>
+            <li><a href="/docs/errors.html">Errors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-outer">
+        <div class="page-header">
+          <h1>POST /salons</h1>
+        </div>
+
+        <div id="content-main">
+          <div class="field field-el">
+            <h2>Description</h2>
+            <p>Creating a salon</p>
+          </div>
+
+	  
+	  <div class="field">
+            <h2>Headers</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">Accept</span>
+                  <p>application/vnd.hairfolio.v1</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">Content-Type</span>
+                  <p>application/json</p>
+                </div>
+              
+            </div>
+          </div>
+	  
+
+          <div class="field">
+            <h2>Parameters</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">salon[name]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The name of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[info]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The info of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[address]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The address of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[city]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The city of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[state]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The state of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[zip]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The zip of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[phone]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The phone of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">salon[website]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The website of the salon</p>
+                </div>
+              
+            </div>
+          </div>
+
+          
+
+          
+            <div class="group-example-request">
+              <h2>Example Response</h2>
+              <div class="content">
+                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"salon": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 55,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2016-12-11T17:59:30.230Z",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Gutmann-Christiansen",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"info": "Hic suscipit numquam dicta est perspiciatis explicabo sint. Quis quam dicta provident. Aliquid dolorum ducimus laborum est repellendus possimus commodi.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"address": "2120 Skiles Roads",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"city": "Raymundoview",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"state": "Missouri",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"zip": "64779",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"website": "http://kuhlmanthompson.info/kristofer_oconnell",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"phone": "(607) 194-5835"<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</pre>
+              </div>
+            </div>
+          
+        </div>
+
+        <div id="sidebar-last">
+          <div class="block api-doc-block">
+            <h2>Resource Information</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>API Version</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>HTTP Method</td>
+                  <td>POST</td>
+                </tr>
+                <tr>
+                  <td>Login Required</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>Response Format</td>
+                  <td>application/json</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer-outer">
+        <div id="footer">Hairfolio API Docs &copy; 2013</div>
+      </div>
+
+    </div>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);	
+	if (isMobile) {	 	
+	 	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+	    if (/windows phone/i.test(userAgent)){
+	        setTimeout(function () { window.location.href="<%= Rails.application.secrets.hairfolio_frontend_url %><%= @post.id %>?ref_code=<%= @unique_code %>"; }, 50);
+	        window.location ="hairfolio://<%= @unique_code %>/"+<%= @post.id %>
+	    }
+	    if (/android/i.test(userAgent)){
+	        setTimeout(function () { window.location = window.location.href="<%= Rails.application.secrets.hairfolio_frontend_url %><%= @post.id %>?ref_code=<%= @unique_code %>"; }, 50);
+	        window.location ="hairfolio://<%= @unique_code %>/"+<%= @post.id %>
+	    }
+	    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream){
+	    	setTimeout(function () { window.location = window.location.href="<%= Rails.application.secrets.hairfolio_frontend_url %><%= @post.id %>?ref_code=<%= @unique_code %>"; }, 50);
+	        window.location ="hairfolio://<%= @unique_code %>/"+<%= @post.id %>
+	    }
+	}else {		
+		window.location.href="<%= Rails.application.secrets.hairfolio_frontend_url %><%= @post.id %>?ref_code=<%= @unique_code %>";
+	}
+</script>

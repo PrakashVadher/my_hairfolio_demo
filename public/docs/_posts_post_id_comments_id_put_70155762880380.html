@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>/posts/:post_id/comments/:id</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="page">
+
+      <div id="header-outer">
+        <div id="header">
+          <a href="/docs" id="logo" title="Home">Hairfolio API Docs</a>
+
+          <ul id="title-nav">
+            <li><a href="/docs/overview.html">Overview</a></li>
+            <li><a href="/docs/authentication.html">Authentication</a></li>
+            <li><a href="/docs/index.html">Resources</a></li>
+            <li><a href="/docs/errors.html">Errors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-outer">
+        <div class="page-header">
+          <h1>PUT /posts/:post_id/comments/:id</h1>
+        </div>
+
+        <div id="content-main">
+          <div class="field field-el">
+            <h2>Description</h2>
+            <p>Updating a comment on a post</p>
+          </div>
+
+	  
+
+          <div class="field">
+            <h2>Parameters</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">comment[body]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The body of the comment</p>
+                </div>
+              
+            </div>
+          </div>
+
+          
+
+          
+            <div class="group-example-request">
+              <h2>Example Response</h2>
+              <div class="content">
+                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"comment": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 64,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"body": "Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2016-12-09T23:51:16.769Z",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"user": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 2275,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "mae_feil@prosacco.name",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2016-12-10T00:23:22.266Z",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"account_type": "consumer",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Hilma",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "Mills",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_url": "https://robohash.org/velsequiincidunt.png?size=300x300&set=set1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_cloudinary_id": "177",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_facebook": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_twitter": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_instagram": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_pinterest": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_tumblr": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prof_desc": "Sed et voluptas. Reprehenderit architecto accusantium voluptatum distinctio beatae voluptas minus. Explicabo deleniti modi consequatur qui accusantium voluptatem. Dolor est rerum voluptas. Quia necessitatibus quos doloremque eveniet optio quasi modi.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"years_exp": 16,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"salon_id": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"career_opportunity": "Amet adipisci modi pariatur illo. Eum commodi dolor. Aut vero error nemo ipsum enim voluptatem. Amet aut ipsa reiciendis omnis omnis consequatur repellendus.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auth_token": "68DrqR1KxjzBAg52S-vK",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"likes": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"educations": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"offerings": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</pre>
+              </div>
+            </div>
+          
+        </div>
+
+        <div id="sidebar-last">
+          <div class="block api-doc-block">
+            <h2>Resource Information</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>API Version</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>HTTP Method</td>
+                  <td>PUT</td>
+                </tr>
+                <tr>
+                  <td>Login Required</td>
+                  <td>true</td>
+                </tr>
+                <tr>
+                  <td>Response Format</td>
+                  <td>application/json</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer-outer">
+        <div id="footer">Hairfolio API Docs &copy; 2013</div>
+      </div>
+
+    </div>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>

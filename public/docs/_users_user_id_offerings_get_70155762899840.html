@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>/users/:user_id/offerings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="page">
+
+      <div id="header-outer">
+        <div id="header">
+          <a href="/docs" id="logo" title="Home">Hairfolio API Docs</a>
+
+          <ul id="title-nav">
+            <li><a href="/docs/overview.html">Overview</a></li>
+            <li><a href="/docs/authentication.html">Authentication</a></li>
+            <li><a href="/docs/index.html">Resources</a></li>
+            <li><a href="/docs/errors.html">Errors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-outer">
+        <div class="page-header">
+          <h1>GET /users/:user_id/offerings</h1>
+        </div>
+
+        <div id="content-main">
+          <div class="field field-el">
+            <h2>Description</h2>
+            <p>Getting the user's offerings</p>
+          </div>
+
+	  
+	  <div class="field">
+            <h2>Headers</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">Accept</span>
+                  <p>application/vnd.hairfolio.v1</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">Content-Type</span>
+                  <p>application/json</p>
+                </div>
+              
+            </div>
+          </div>
+	  
+
+          <div class="field">
+            <h2>Parameters</h2>
+            <div class="odd">
+              
+            </div>
+          </div>
+
+          
+
+          
+            <div class="group-example-request">
+              <h2>Example Response</h2>
+              <div class="content">
+                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"offerings": [<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 53,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2016-12-17T00:28:24.842Z",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"price": 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"user_id": 687,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"service": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 111,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2016-12-17T00:28:24.767Z",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Jacobi-Miller",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"position": 1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"category": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 67,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"created_at": "2016-12-17T00:28:24.761Z",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "Reichert, Cartwright and Schneider"<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>&nbsp;&nbsp;&nbsp;&nbsp;]<br/>}</pre>
+              </div>
+            </div>
+          
+        </div>
+
+        <div id="sidebar-last">
+          <div class="block api-doc-block">
+            <h2>Resource Information</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>API Version</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>HTTP Method</td>
+                  <td>GET</td>
+                </tr>
+                <tr>
+                  <td>Login Required</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>Response Format</td>
+                  <td>application/json</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer-outer">
+        <div id="footer">Hairfolio API Docs &copy; 2013</div>
+      </div>
+
+    </div>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>

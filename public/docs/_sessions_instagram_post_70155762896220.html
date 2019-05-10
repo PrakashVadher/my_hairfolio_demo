@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>/sessions/instagram</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="page">
+
+      <div id="header-outer">
+        <div id="header">
+          <a href="/docs" id="logo" title="Home">Hairfolio API Docs</a>
+
+          <ul id="title-nav">
+            <li><a href="/docs/overview.html">Overview</a></li>
+            <li><a href="/docs/authentication.html">Authentication</a></li>
+            <li><a href="/docs/index.html">Resources</a></li>
+            <li><a href="/docs/errors.html">Errors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-outer">
+        <div class="page-header">
+          <h1>POST /sessions/instagram</h1>
+        </div>
+
+        <div id="content-main">
+          <div class="field field-el">
+            <h2>Description</h2>
+            <p>Signing in or creating a user with instagram</p>
+          </div>
+
+	  
+	  <div class="field">
+            <h2>Headers</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">Accept</span>
+                  <p>application/vnd.hairfolio.v1</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">Content-Type</span>
+                  <p>application/json</p>
+                </div>
+              
+            </div>
+          </div>
+	  
+
+          <div class="field">
+            <h2>Parameters</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">instagram_token
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The token returned from instagram authentication</p>
+                </div>
+              
+            </div>
+          </div>
+
+          
+
+          
+            <div class="group-example-request">
+              <h2>Example Response</h2>
+              <div class="content">
+                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"user": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 3268,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auth_token": "AkDUSRgCBwdiFm6e37S7",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "leila@hodkiewicz.org",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Adah",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "Collier",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"account_type": "consumer",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"is_following": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"salon": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"brand": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_url": "https://robohash.org/porroullamnemo.png?size=300x300&set=set1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_cloudinary_id": "1746",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_facebook": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_twitter": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_instagram": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_pinterest": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_tumblr": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"years_exp": 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"likes": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"educations": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"offerings": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</pre>
+              </div>
+            </div>
+          
+        </div>
+
+        <div id="sidebar-last">
+          <div class="block api-doc-block">
+            <h2>Resource Information</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>API Version</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>HTTP Method</td>
+                  <td>POST</td>
+                </tr>
+                <tr>
+                  <td>Login Required</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>Response Format</td>
+                  <td>application/json</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer-outer">
+        <div id="footer">Hairfolio API Docs &copy; 2013</div>
+      </div>
+
+    </div>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>

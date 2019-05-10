@@ -1,0 +1,5188 @@
+{
+  "name": "Hairfolio API Docs",
+  "url": "https:\/\/api.hairfolio.tech",
+  "version": "1.0",
+  "copyright": "2016",
+  "description": "Hairfolio is a socail network for the beauty profession.",
+  "authentication": "For authenticated routes please pass the following header: \"Authorization: somerandomtoken\". To get an auth_token please see the session and user registration routes.",
+  "errors": {
+    "http_errors": [
+      {
+        "code": 200,
+        "text": "OK",
+        "description": "Success"
+      },
+      {
+        "code": 304,
+        "text": "Not Modified",
+        "description": "There was no new data to return."
+      },
+      {
+        "code": 400,
+        "text": "Bad Request",
+        "description": "The request was invalid or cannot be otherwise served"
+      }
+    ],
+    "api_errors": [
+      {
+        "code": 32,
+        "text": "Could not authenticate you",
+        "description": "Your call could not be completed as dialed"
+      },
+      {
+        "code": 34,
+        "text": "Sorry, that page does not exist",
+        "description": "Corresponds with an HTTP 404 - the specified resource was not found."
+      }
+    ]
+  },
+  "resources": {
+    "brands": [
+      {
+        "action" : "GET",
+        "uri" : "\/brands",
+        "authentication" : true,
+        "description" : "Getting available brands",
+        "params" : {
+          "service_id" : {
+            "type" : "integer",
+            "description" : "The id of the service",
+            "required" : false
+          }
+        },
+        "response" : {
+          "brands" :
+            [
+              {
+                "id":84,
+                "created_at":"2016-12-08T20:32:14.486Z",
+                "updated_at":"2016-12-08T20:32:14.486Z",
+                "name":"Heller-Murphy",
+                "services":
+                  [
+                    {
+                      "id":13,
+                      "created_at":"2016-12-08T20:32:14.519Z",
+                      "name":"Konopelski and Sons",
+                      "position":1
+                    }
+                  ]
+                }
+              ],
+              "meta": {
+                "current_page": 1,
+                "next_page": 2,
+                "prev_page": null,
+                "total_pages": 12,
+                "total_count": 222
+              }
+          }
+        },
+        {
+          "action" : "GET",
+          "uri" : "\/brands\/:id",
+          "authentication" : true,
+          "description" : "Getting the brand details",
+          "response" : {
+            "brand" :
+              {
+                "id":84,
+                "created_at":"2016-12-08T20:32:14.486Z",
+                "updated_at":"2016-12-08T20:32:14.486Z",
+                "name":"Heller-Murphy",
+                "services":
+                  [
+                    {
+                      "id":13,
+                      "created_at":"2016-12-08T20:32:14.519Z",
+                      "name":"Konopelski and Sons",
+                      "position":1
+                    }
+                  ]
+                }
+            }
+          }
+    ],
+    "categories": [
+      {
+        "action" : "GET",
+        "uri" : "\/categories\/",
+        "authentication" : true,
+        "description" : "Getting the available categories",
+        "response" : {
+          "categories" : [
+            {
+              "id":84,
+              "created_at":"2016-12-08T20:32:14.486Z",
+              "name":"Heller-Murphy"
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      }
+    ],
+    "certificates": [
+      {
+        "action" : "GET",
+        "uri" : "\/certificates\/",
+        "authentication" : true,
+        "description" : "Getting the available certificates",
+        "response" : {
+          "certificates" : [
+            {
+              "id":84,
+              "created_at":"2016-12-08T20:32:14.486Z",
+              "name":"Heller-Murphy"
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action" : "GET",
+        "uri" : "\/certificates\/:id",
+        "authentication" : true,
+        "description" : "Getting the information on a certificate",
+        "response" : {
+          "certificate" :
+          {
+            "id":84,
+            "created_at":"2016-12-08T20:32:14.486Z",
+            "name":"Heller-Murphy"
+          }
+        }
+      }
+    ],
+    "comments" : [
+      {
+        "action" : "GET",
+        "uri" : "\/posts\/:post_id\/comments",
+        "authentication" : false,
+        "description" : "Getting the comments on a post",
+        "response" : {
+           "comments":[
+              {
+                 "id":64,
+                 "body":"Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",
+                 "created_at":"2016-12-09T23:51:16.769Z",
+                 "user":{
+                    "id":2275,
+                    "email":"mae_feil@prosacco.name",
+                    "created_at":"2016-12-10T00:23:22.266Z",
+                    "account_type":"consumer",
+                    "first_name":"Hilma",
+                    "last_name":"Mills",
+                    "avatar_url":"https://robohash.org/velsequiincidunt.png?size=300x300\u0026set=set1",
+                    "avatar_cloudinary_id":"177",
+                    "share_facebook":false,
+                    "share_twitter":false,
+                    "share_instagram":false,
+                    "share_pinterest":false,
+                    "share_tumblr":false,
+                    "prof_desc":"Sed et voluptas. Reprehenderit architecto accusantium voluptatum distinctio beatae voluptas minus. Explicabo deleniti modi consequatur qui accusantium voluptatem. Dolor est rerum voluptas. Quia necessitatibus quos doloremque eveniet optio quasi modi.",
+                    "years_exp":16,
+                    "salon_id":null,
+                    "career_opportunity":"Amet adipisci modi pariatur illo. Eum commodi dolor. Aut vero error nemo ipsum enim voluptatem. Amet aut ipsa reiciendis omnis omnis consequatur repellendus.",
+                    "auth_token":"68DrqR1KxjzBAg52S-vK",
+                    "likes":[
+
+                    ],
+                    "educations":[
+
+                    ],
+                    "offerings":[
+
+                    ]
+                 }
+              }
+           ],
+           "meta": {
+             "current_page": 1,
+             "next_page": 2,
+             "prev_page": null,
+             "total_pages": 12,
+             "total_count": 222
+           }
+        }
+      },
+      {
+        "action" : "POST",
+        "uri" : "\/posts\/:post_id\/comments",
+        "authentication" : false,
+        "description" : "Creating a comment on a post",
+        "params" : {
+          "comment[body]" : {
+            "type": "string",
+            "description": "The body of the comment",
+            "required": true
+          }
+        },
+        "response" : {
+          "comment" : {
+             "id":64,
+             "body":"Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",
+             "created_at":"2016-12-09T23:51:16.769Z",
+             "user":{
+               "id":2275,
+               "email":"mae_feil@prosacco.name",
+               "created_at":"2016-12-10T00:23:22.266Z",
+               "account_type":"consumer",
+               "first_name":"Hilma",
+               "last_name":"Mills",
+               "avatar_url":"https://robohash.org/velsequiincidunt.png?size=300x300\u0026set=set1",
+               "avatar_cloudinary_id":"177",
+               "share_facebook":false,
+               "share_twitter":false,
+               "share_instagram":false,
+               "share_pinterest":false,
+               "share_tumblr":false,
+               "prof_desc":"Sed et voluptas. Reprehenderit architecto accusantium voluptatum distinctio beatae voluptas minus. Explicabo deleniti modi consequatur qui accusantium voluptatem. Dolor est rerum voluptas. Quia necessitatibus quos doloremque eveniet optio quasi modi.",
+               "years_exp":16,
+               "salon_id":null,
+               "career_opportunity":"Amet adipisci modi pariatur illo. Eum commodi dolor. Aut vero error nemo ipsum enim voluptatem. Amet aut ipsa reiciendis omnis omnis consequatur repellendus.",
+               "auth_token":"68DrqR1KxjzBAg52S-vK",
+                "likes":[
+
+                ],
+                "educations":[
+
+                ],
+                "offerings":[
+
+                ]
+             }
+          }
+        }
+      },
+      {
+        "action" : "PUT",
+        "uri" : "\/posts\/:post_id\/comments\/:id",
+        "authentication" : false,
+        "description" : "Updating a comment on a post",
+        "params" : {
+          "comment[body]" : {
+            "type": "string",
+            "description": "The body of the comment",
+            "required": true
+          }
+        },
+        "response" : {
+          "comment" : {
+             "id":64,
+             "body":"Minus eos sit qui eos error. Eveniet odio sunt repellendus et quo. Illum labore consequatur quia doloremque voluptas natus.",
+             "created_at":"2016-12-09T23:51:16.769Z",
+             "user":{
+               "id":2275,
+               "email":"mae_feil@prosacco.name",
+               "created_at":"2016-12-10T00:23:22.266Z",
+               "account_type":"consumer",
+               "first_name":"Hilma",
+               "last_name":"Mills",
+               "avatar_url":"https://robohash.org/velsequiincidunt.png?size=300x300\u0026set=set1",
+               "avatar_cloudinary_id":"177",
+               "share_facebook":false,
+               "share_twitter":false,
+               "share_instagram":false,
+               "share_pinterest":false,
+               "share_tumblr":false,
+               "prof_desc":"Sed et voluptas. Reprehenderit architecto accusantium voluptatum distinctio beatae voluptas minus. Explicabo deleniti modi consequatur qui accusantium voluptatem. Dolor est rerum voluptas. Quia necessitatibus quos doloremque eveniet optio quasi modi.",
+               "years_exp":16,
+               "salon_id":null,
+               "career_opportunity":"Amet adipisci modi pariatur illo. Eum commodi dolor. Aut vero error nemo ipsum enim voluptatem. Amet aut ipsa reiciendis omnis omnis consequatur repellendus.",
+               "auth_token":"68DrqR1KxjzBAg52S-vK",
+                "likes":[
+
+                ],
+                "educations":[
+
+                ],
+                "offerings":[
+
+                ]
+             }
+          }
+        }
+      },
+      {
+        "action" : "DELETE",
+        "uri" : "\/posts\/:post_id\/comments\/:id",
+        "authentication" : false,
+        "description" : "Deleting a comment from a post",
+        "response" : {
+          "status" : 204
+        }
+      }
+    ],
+    "contacts": [
+      {
+        "action" : "GET",
+        "uri" : "\/contacts",
+        "authentication" : false,
+        "description" : "Displaying the logged in user's contacts ( Black book )",
+        "response" : {
+           "contacts":[
+              {
+                 "id":133,
+                 "created_at":"2016-12-09T23:58:10.208Z",
+                 "first_name":"Janae",
+                 "last_name":"Koelpin",
+                 "address":"860 Emelia Prairie",
+                 "city":"San Jose",
+                 "state":"California",
+                 "zipcode":"92892",
+                 "company":"Eichmann-Gorczany",
+                 "emails":[
+                    {
+                       "id":133,
+                       "created_at":"2016-12-09T23:58:10.230Z",
+                       "email":"donna.bauch@tillman.biz",
+                       "email_type":"primary"
+                    }
+                 ],
+                 "phones":[
+                    {
+                       "id":133,
+                       "created_at":"2016-12-09T23:58:10.248Z",
+                       "number":"(261) 667-4692 x65918",
+                       "phone_type":"home"
+                    }
+                 ],
+                 "posts" :[
+
+                 ]
+              }
+           ]
+        }
+      },
+      {
+        "action" : "GET",
+        "uri" : "\/contacts\/:id",
+        "authentication" : false,
+        "description" : "Displaying the contact information",
+        "response" : {
+           "contact":
+            {
+               "id":133,
+               "created_at":"2016-12-09T23:58:10.208Z",
+               "first_name":"Janae",
+               "last_name":"Koelpin",
+               "address":"860 Emelia Prairie",
+               "city":"San Jose",
+               "state":"California",
+               "zipcode":"92892",
+               "company":"Eichmann-Gorczany",
+               "emails":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.230Z",
+                     "email":"donna.bauch@tillman.biz",
+                     "email_type":"primary"
+                  }
+               ],
+               "phones":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.248Z",
+                     "number":"(261) 667-4692 x65918",
+                     "phone_type":"home"
+                  }
+               ],
+               "posts" :[
+
+               ]
+            }
+        }
+      },
+      {
+        "action" : "POST",
+        "uri" : "\/contacts",
+        "authentication" : false,
+        "description" : "Creating a contact",
+        "params" : {
+          "contact[first_name]" : {
+            "type": "string",
+            "description": "The first name of the contact",
+            "required": true
+          },
+          "contact[last_name]" : {
+            "type": "string",
+            "description": "The last name of the contact",
+            "required": true
+          },
+          "contact[address]" : {
+            "type": "string",
+            "description": "The address of the contact",
+            "required": true
+          },
+          "contact[city]" : {
+            "type": "string",
+            "description": "The city of the contact",
+            "required": true
+          },
+          "contact[state]" : {
+            "type": "string",
+            "description": "The state of the contact",
+            "required": true
+          },
+          "contact[zipcode]" : {
+            "type": "string",
+            "description": "The zipcode of the contact",
+            "required": true
+          },
+          "contact[company]" : {
+            "type": "string",
+            "description": "The company name of the contact",
+            "required": true
+          },
+          "contact[emails_atributes][0][email]" : {
+            "type": "string",
+            "description": "The email address of the email",
+            "required": true
+          },
+          "contact[emails_atributes][0][email_type]" : {
+            "type": "string",
+            "description": "The email type of the email. (primary or secondary)",
+            "required": true
+          },
+          "contact[phones_attributes][0][number]" : {
+            "type": "string",
+            "description": "The number of the phone",
+            "required": true
+          },
+          "contact[phones_attributes][0][phone_type]" : {
+            "type": "string",
+            "description": "The type of the phone contact (home, work, mobile)",
+            "required": true
+          },
+          "contact[post_ids]" : {
+            "type" : "array",
+            "description": "An array of post ids",
+            "required" : false
+          }
+        },
+        "response" : {
+           "contact":
+            {
+               "id":133,
+               "created_at":"2016-12-09T23:58:10.208Z",
+               "first_name":"Janae",
+               "last_name":"Koelpin",
+               "address":"860 Emelia Prairie",
+               "city":"San Jose",
+               "state":"California",
+               "zipcode":"92892",
+               "company":"Eichmann-Gorczany",
+               "emails":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.230Z",
+                     "email":"donna.bauch@tillman.biz",
+                     "email_type":"primary"
+                  }
+               ],
+               "phones":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.248Z",
+                     "number":"(261) 667-4692 x65918",
+                     "phone_type":"home"
+                  }
+               ],
+               "posts" :[
+
+               ]
+            }
+        }
+      },
+      {
+        "action" : "PUT",
+        "uri" : "\/contacts\/:id",
+        "authentication" : false,
+        "description" : "Updating a contact",
+        "params" : {
+          "contact[first_name]" : {
+            "type": "string",
+            "description": "The first name of the contact",
+            "required": true
+          },
+          "contact[last_name]" : {
+            "type": "string",
+            "description": "The last name of the contact",
+            "required": true
+          },
+          "contact[address]" : {
+            "type": "string",
+            "description": "The address of the contact",
+            "required": true
+          },
+          "contact[city]" : {
+            "type": "string",
+            "description": "The city of the contact",
+            "required": true
+          },
+          "contact[state]" : {
+            "type": "string",
+            "description": "The state of the contact",
+            "required": true
+          },
+          "contact[zipcode]" : {
+            "type": "string",
+            "description": "The zipcode of the contact",
+            "required": true
+          },
+          "contact[company]" : {
+            "type": "string",
+            "description": "The company name of the contact",
+            "required": true
+          },
+          "contact[emails_atributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the email to be updated.",
+            "required": true
+          },
+          "contact[emails_atributes][0][email]" : {
+            "type": "string",
+            "description": "The email address of the email",
+            "required": true
+          },
+          "contact[emails_atributes][0][email_type]" : {
+            "type": "string",
+            "description": "The email type of the email. (work or home)",
+            "required": true
+          },
+          "contact[emails_atributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Set the _destroy flag to delete the email from the contact",
+            "required": true
+          },
+          "contact[phones_attributes][0][id]" : {
+            "type": "string",
+            "description": "The id of the phone",
+            "required": true
+          },
+          "contact[phones_attributes][0][number]" : {
+            "type": "string",
+            "description": "The number of the phone",
+            "required": true
+          },
+          "contact[phones_attributes][0][phone_type]" : {
+            "type": "string",
+            "description": "The type of the phone contact (home or work)",
+            "required": true
+          },
+          "contact[phones_attributes][0][_destroy]" : {
+            "type": "string",
+            "description": "Set the _destroy flag to delete the phone from the contact",
+            "required": true
+          },
+          "contact[post_ids]" : {
+            "type" : "array",
+            "description": "An array of post ids",
+            "required" : false
+          }
+        },
+        "response" : {
+           "contact":
+            {
+               "id":133,
+               "created_at":"2016-12-09T23:58:10.208Z",
+               "first_name":"Janae",
+               "last_name":"Koelpin",
+               "address":"860 Emelia Prairie",
+               "city":"San Jose",
+               "state":"California",
+               "zipcode":"92892",
+               "company":"Eichmann-Gorczany",
+               "emails":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.230Z",
+                     "email":"donna.bauch@tillman.biz",
+                     "email_type":"primary"
+                  }
+               ],
+               "phones":[
+                  {
+                     "id":133,
+                     "created_at":"2016-12-09T23:58:10.248Z",
+                     "number":"(261) 667-4692 x65918",
+                     "phone_type":"home"
+                  }
+               ],
+               "posts" :[
+
+               ]
+            }
+        }
+      },
+      {
+        "action" : "DELETE",
+        "uri" : "\/contacts\/:id",
+        "authentication" : false,
+        "description" : "Deleting the contact from the black book",
+        "response" : {
+           "status": 204
+        }
+      }
+    ],
+   "conversations":[
+     {
+       "action" : "GET",
+       "uri" : "\/conversations",
+       "authentication" : false,
+       "description" : "Getting the conversations the current user is a participant of",
+       "response" : {
+          "conversations": [
+            {
+              "id": 153,
+              "sender_id": 2303,
+              "created_at": "2016-12-10T00:33:50.854Z",
+              "unread_messages" : 0,
+              "last_message": {
+                "id": 176,
+                "user": {
+                  "id": 2303,
+                  "auth_token": "k76MZ6f4K33Ksqx295P3",
+                  "email": "dejon@damore.com",
+                  "first_name": "Lukas",
+                  "last_name": "Abernathy",
+                  "account_type": "consumer",
+                  "is_following": false,
+                  "salon": null,
+                  "brand": null,
+                  "avatar_url": "https:\/\/robohash.org\/evenietdebitisvelit.png?size=300x300&set=set1",
+                  "avatar_cloudinary_id": "507",
+                  "share_facebook": false,
+                  "share_twitter": false,
+                  "share_instagram": false,
+                  "share_pinterest": false,
+                  "share_tumblr": false,
+                  "prof_desc": "Non magnam quibusdam recusandae quas officiis. Totam ut eos. Adipisci et ea corporis. Delectus ratione error provident. Praesentium aut eum et voluptatem deserunt esse vel.",
+                  "years_exp": 20,
+                  "career_opportunity": "Rerum adipisci assumenda natus. Delectus et incidunt perferendis culpa qui unde. Rerum dolorem enim laboriosam sequi.",
+                  "likes": [
+
+                  ],
+                  "educations": [
+
+                  ],
+                  "offerings": [
+
+                  ]
+                },
+                "created_at": "2016-12-10T00:33:50.927Z",
+                "conversation_id": 153,
+                "body": "MyText"
+              },
+              "recipient_ids": [
+                2304
+              ]
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+     },
+     {
+       "action" : "POST",
+       "uri" : "\/conversations",
+       "authentication" : false,
+       "description" : "Starting a conversation with users",
+       "params" : {
+         "conversation[recipient_ids]" : {
+           "type": "array",
+           "description": "Array of user ids in the conversation",
+           "required": true
+         }
+       },
+       "response" : {
+         "conversation":
+          {
+            "id":160,
+            "sender_id":2331,
+            "created_at":"2016-12-10T00:38:45.377Z",
+            "last_message":null,
+            "unread_messages" : 0,
+            "recipient_ids":
+              [
+                2333
+                ]
+              }
+          }
+     },
+     {
+       "action" : "POST",
+       "uri" : "\/conversations\/:id\/read",
+       "authentication" : false,
+       "description" : "Mark all messages as read that the user didn't send",
+       "response" : {
+         "conversation":
+          {
+            "id":160,
+            "sender_id":2331,
+            "created_at":"2016-12-10T00:38:45.377Z",
+            "last_message":null,
+            "unread_messages" : 0,
+            "recipient_ids":
+              [
+                2333
+                ]
+              }
+          }
+     },
+     {
+       "action" : "POST",
+       "uri" : "\/conversations\/:id",
+       "authentication" : false,
+       "description" : "Updating a conversation to add or delete users",
+       "params" : {
+         "conversation[recipient_ids]" : {
+           "type": "array",
+           "description": "Array of user ids in the conversation",
+           "required": true
+         }
+       },
+       "response" : {
+         "conversation":
+          {
+            "id":160,
+            "sender_id":2331,
+            "created_at":"2016-12-10T00:38:45.377Z",
+            "last_message":null,
+            "unread_messages" : 0,
+            "recipient_ids":
+              [
+                2333, 2092
+                ]
+              }
+          }
+     },
+     {
+       "action" : "DELETE",
+       "uri" : "\/conversations\/:id",
+       "authentication" : false,
+       "description" : "Deleting a conversation and it's messages",
+       "params" : {
+         "conversation[recipient_ids]" : {
+           "type": "array",
+           "description": "Array of user ids in the conversation",
+           "required": true
+         }
+       },
+       "response" : {
+         "status": 204
+       }
+     }
+    ],
+    "degrees": [
+      {
+        "action" : "GET",
+        "uri" : "\/degrees",
+        "authentication" : false,
+        "description" : "Getting available degrees",
+        "response" : {
+          "degrees": [
+            {
+              "id":72,
+              "created_at":"2016-12-10T00:43:41.950Z",
+              "name":"Enormous Cotton Knife"
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action" : "GET",
+        "uri" : "\/degrees\/:id",
+        "authentication" : false,
+        "description" : "Getting a single degree",
+        "response" : {
+          "degree":
+            {
+              "id":72,
+              "created_at":"2016-12-10T00:43:41.950Z",
+              "name":"Enormous Cotton Knife",
+              "position" : 1
+            }
+        }
+      }
+    ],
+    "educations": [
+      {
+        "action": "GET",
+        "uri": "\/users\/:user_id\/educations",
+        "authentication" : true,
+        "description": "Getting the user's educations",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+           "educations":[{
+              "id":59,
+              "created_at":"2016-12-17T00:33:19.041Z",
+              "name":"Skiles, Schoen and Torp",
+              "year_from":1998,
+              "year_to":1288,
+              "user_id":694,
+              "website":"http://ruelward.biz/ozella",
+              "degree":{
+                 "id":79,
+                 "created_at":"2016-12-17T00:33:18.936Z",
+                 "name":"Sleek Copper Hat",
+                 "position":0
+              }
+           }]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:user_id\/educations",
+        "authentication" : true,
+        "description": "Creating a user education",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "education[name]" : {
+            "type" : "string",
+            "description" : "The name of the education",
+            "required" : false
+          },
+          "education[year_from]" : {
+            "type" : "integer",
+            "description" : "The year_from of the education",
+            "required" : false
+          },
+          "education[year_to]" : {
+            "type" : "integer",
+            "description" : "The year_to of the education",
+            "required" : false
+          },
+          "education[website]" : {
+            "type" : "string",
+            "description" : "The website of the education",
+            "required" : false
+          },
+          "education[degree_id]" : {
+            "type" : "integer",
+            "description" : "The id of the degree",
+            "required" : false
+          }
+        },
+        "response" : {
+           "education":{
+              "id":59,
+              "created_at":"2016-12-17T00:33:19.041Z",
+              "name":"Skiles, Schoen and Torp",
+              "year_from":1998,
+              "year_to":1288,
+              "user_id":694,
+              "website":"http://ruelward.biz/ozella",
+              "degree":{
+                 "id":79,
+                 "created_at":"2016-12-17T00:33:18.936Z",
+                 "name":"Sleek Copper Hat",
+                 "position":0
+              }
+           }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/users\/:user_id\/educations\/:id",
+        "authentication" : true,
+        "description": "Updating a user's education",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "education[name]" : {
+            "type" : "string",
+            "description" : "The name of the education",
+            "required" : false
+          },
+          "education[year_from]" : {
+            "type" : "integer",
+            "description" : "The year_from of the education",
+            "required" : false
+          },
+          "education[year_to]" : {
+            "type" : "integer",
+            "description" : "The year_to of the education",
+            "required" : false
+          },
+          "education[website]" : {
+            "type" : "string",
+            "description" : "The website of the education",
+            "required" : false
+          },
+          "education[degree_id]" : {
+            "type" : "integer",
+            "description" : "The id of the degree",
+            "required" : false
+          }
+        },
+        "response" : {
+           "education":{
+              "id":59,
+              "created_at":"2016-12-17T00:33:19.041Z",
+              "name":"Skiles, Schoen and Torp",
+              "year_from":1998,
+              "year_to":1288,
+              "user_id":694,
+              "website":"http://ruelward.biz/ozella",
+              "degree":{
+                 "id":79,
+                 "created_at":"2016-12-17T00:33:18.936Z",
+                 "name":"Sleek Copper Hat",
+                 "position":0
+              }
+           }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:user_id\/educations\/:id",
+        "authentication" : true,
+        "description": "Deleting a user education",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "status" : 204
+        }
+      }
+    ],
+    "experiences": [
+      {
+        "action" : "GET",
+        "uri" : "\/experiences",
+        "authentication" : false,
+        "description" : "Getting available experiences",
+        "response" : {
+          "degrees": [
+            {
+              "id":72,
+              "created_at":"2016-12-10T00:43:41.950Z",
+              "name":"Enormous Cotton Knife",
+              "position" : 1
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      }
+    ],
+    "folios": [
+      {
+        "action": "GET",
+        "uri": "\/folios",
+        "authentication" : false,
+        "description": "Showing the users hairfolios",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "folios": [
+            {
+              "id":65,
+              "created_at":"2016-12-10T00:48:52.730Z",
+              "name":"Et qui unde natus eius.",
+              "posts_count" : 0,
+              "last_post" : null
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/folios\/:id\/posts",
+        "authentication" : false,
+        "description": "Showing the posts of a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "posts": [
+
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/folios\/:id\/add_post",
+        "authentication" : false,
+        "description": "Adding a post to a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "post_id" : {
+            "type" : "integer",
+            "description" : "the id of the post",
+            "required" : true
+          }
+        },
+        "response": {
+          "posts": [
+
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/folios\/:id\/remove_post",
+        "authentication" : false,
+        "description": "Removing a post fom a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "post_id" : {
+            "type" : "integer",
+            "description" : "the id of the post",
+            "required" : true
+          }
+        },
+        "response": {
+          "posts": [
+
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/folios",
+        "authentication" : false,
+        "description": "Creating a new hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "folio[name]" : {
+            "type" : "array",
+            "description" : "The name of the folio",
+            "required" : true
+          },
+          "folio[post_ids]" : {
+            "type" : "array",
+            "description" : "An array of post ids to fit in the folio",
+            "required" : true
+          }
+        },
+        "response": {
+          "folios": [
+            {
+              "id":65,
+              "created_at":"2016-12-10T00:48:52.730Z",
+              "name":"Et qui unde natus eius.",
+              "last_post": null,
+              "posts_count" : 0
+            }
+          ]
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/folios\/:id",
+        "authentication" : false,
+        "description": "Updating a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "folio[name]" : {
+            "type" : "array",
+            "description" : "The name of the folio",
+            "required" : true
+          },
+          "folio[post_ids]" : {
+            "type" : "array",
+            "description" : "An array of post ids to fit in the folio",
+            "required" : true
+          }
+        },
+        "response": {
+          "folios": [
+            {
+              "id":65,
+              "created_at":"2016-12-10T00:48:52.730Z",
+              "name":"Et qui unde natus eius.",
+              "last_post": null,
+              "posts_count" : 0
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/folios\/:id",
+        "authentication" : false,
+        "description": "Deleting a hairfolio",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "follows": [
+      {
+        "action": "GET",
+        "uri": "\/users\/:user_id\/follows",
+        "authentication" : true,
+        "description": "Displaying the followers and followings of a user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "following" : {
+            "type" : "boolean",
+            "description" : "Setting following to true will show the users the user is following instead of their followers",
+            "required" : false
+          },
+          "friends" : {
+            "type" : "boolean",
+            "description" : "Setting friends to true will show the users the user is following who follow them back",
+            "required" : false
+          }
+        },
+        "response": {
+          "users": [
+            {
+              "id": 2511,
+              "auth_token": "2QNDKWLiPNdtCx2GEsC_",
+              "email": "letha@stehr.io",
+              "first_name": "Susie",
+              "last_name": "Herzog",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/doloribusvoluptasnam.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1155",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Mollitia ut quis ipsam sed sapiente. Neque sint similique voluptas quae omnis deleniti impedit. Esse enim optio inventore autem sunt quisquam numquam. Porro officiis autem neque amet esse quas vel.",
+              "years_exp": 19,
+              "career_opportunity": "Suscipit sit aut autem. Repudiandae perferendis aut voluptatibus. Repudiandae corporis sapiente non. Saepe quae eos illum eum minima nam incidunt. Ipsam reiciendis rerum nemo exercitationem itaque quam reprehenderit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ],
+              "certificates": [
+
+              ]
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:user_id\/follows",
+        "authentication" : true,
+        "description": "Following the user in the url as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "users": [
+            {
+              "id": 2511,
+              "auth_token": "2QNDKWLiPNdtCx2GEsC_",
+              "email": "letha@stehr.io",
+              "first_name": "Susie",
+              "last_name": "Herzog",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/doloribusvoluptasnam.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1155",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Mollitia ut quis ipsam sed sapiente. Neque sint similique voluptas quae omnis deleniti impedit. Esse enim optio inventore autem sunt quisquam numquam. Porro officiis autem neque amet esse quas vel.",
+              "years_exp": 19,
+              "career_opportunity": "Suscipit sit aut autem. Repudiandae perferendis aut voluptatibus. Repudiandae corporis sapiente non. Saepe quae eos illum eum minima nam incidunt. Ipsam reiciendis rerum nemo exercitationem itaque quam reprehenderit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ],
+              "experiences": [
+
+              ],
+              "certificates": [
+
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:user_id\/follows",
+        "authentication" : true,
+        "description": "Un-following the user in the url as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "harmonies": [
+      {
+        "action": "GET",
+        "uri": "\/harmonies",
+        "authentication" : true,
+        "description": "Getting the available color harmonies",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "line_id" : {
+            "type" : "integer",
+            "description" : "Filtering the color harmonies by the product line.",
+            "required" : false
+          }
+        },
+        "response": {
+          "harmonies": [
+            {
+              "id": 170,
+              "created_at": "2016-12-11T16:10:36.220Z",
+              "name": "Kulas-Watsica",
+              "line": {
+                "id": 207,
+                "created_at": "2016-12-11T16:10:36.215Z",
+                "name": "Hodkiewicz Inc",
+                "brand": {
+                  "id": 286,
+                  "created_at": "2016-12-11T16:10:36.204Z",
+                  "name": "Bergstrom-Kunze",
+                  "services": [
+
+                  ]
+                },
+                "unit": "g"
+              },
+              "position": 1,
+              "colors": [
+                {
+                  "id": 142,
+                  "created_at": "2016-12-11T16:10:36.237Z",
+                  "harmony_id": 170,
+                  "code": "jdij2d390",
+                  "start_hex": "31529d",
+                  "end_hex": "b92769"
+                }
+              ]
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      }
+    ],
+    "home": [
+      {
+        "action": "GET",
+        "uri": "\/",
+        "authentication" : true,
+        "description": "The API Welcome Message",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "message": "Welcome!"
+        }
+      }
+    ],
+    "likes": [
+      {
+        "action": "GET",
+        "uri": "\/posts\/:post_id\/likes",
+        "authentication" : true,
+        "description": "Gettign the likes of a post",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "likes": [
+            {
+              "id": 56,
+              "created_at": "2016-12-11T16:18:02.544Z",
+              "post": {
+                "id": 488,
+                "created_at": "2016-12-14T23:34:26.103Z",
+                "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                "likes_count": 0,
+                "comments_count": 0,
+                "liked_by_me": false,
+                "photos": [
+                  {
+                    "id": 305,
+                    "created_at": "2016-12-14T23:34:26.105Z",
+                    "asset_url": "http:\/\/schimmel.name\/darien",
+                    "post_id": 488,
+                    "labels": [
+                      {
+                        "id": 254,
+                        "created_at": "2016-12-14T23:34:26.107Z",
+                        "position_top": 1,
+                        "position_left": 1,
+                        "label_type": "hash_tag",
+                        "tag": {
+                          "id": 318,
+                          "created_at": "2016-12-14T23:34:25.906Z",
+                          "name": "expedita",
+                          "url": null
+                        },
+                        "photo_id": 305,
+                        "formulas": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.109Z",
+                            "post_id": null,
+                            "service": {
+                              "id": 275,
+                              "created_at": "2016-12-14T23:34:25.927Z",
+                              "name": "Jenkins Group",
+                              "position": 1
+                            },
+                            "time": 1,
+                            "weight": 1,
+                            "volume": 1,
+                            "treatments": [
+                              {
+                                "id": 207,
+                                "created_at": "2016-12-14T23:34:26.111Z",
+                                "color": {
+                                  "id": 230,
+                                  "created_at": "2016-12-14T23:34:25.962Z",
+                                  "harmony_id": 242,
+                                  "code": "jdij2d390",
+                                  "start_hex": "996a96",
+                                  "end_hex": "41ffa9"
+                                },
+                                "weight": 1
+                              }
+                            ],
+                            "label_id": 254
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "videos": [
+                  {
+                    "id": 2,
+                    "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                    "post_id": 488,
+                    "created_at": "2016-12-14T23:34:26.114Z",
+                    "updated_at": "2016-12-14T23:34:26.114Z"
+                  }
+                ]
+              },
+              "user": {
+                "id": 2522,
+                "email": "pietro.schaden@windler.biz",
+                "created_at": "2016-12-11T16:18:02.453Z",
+                "updated_at": "2016-12-11T16:18:02.453Z",
+                "account_type": "consumer",
+                "first_name": "Dereck",
+                "last_name": "Blick",
+                "avatar_url": "https:\/\/robohash.org\/recusandaeautipsam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "27",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Unde labore quo voluptatem in beatae et impedit. Laboriosam consequatur ex aliquid et omnis rerum. Non eos consequatur velit. Eum ipsam et.",
+                "years_exp": 6,
+                "salon_id": null,
+                "career_opportunity": "Laudantium et ut exercitationem. Ut sit omnis minima sit provident et suscipit. Sequi pariatur impedit. Autem aperiam sit. Tempore beatae assumenda.",
+                "auth_token": "Jyhaxh4gaM7HPRMyGbsE"
+              }
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/posts\/:post_id\/likes",
+        "authentication" : true,
+        "description": "Liking a post as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json",
+          "Authorization" : "j0dj92j90dj3d9023jd23j"
+        },
+        "response": {
+          "likes": [
+            {
+              "id": 56,
+              "created_at": "2016-12-11T16:18:02.544Z",
+              "post": {
+                "id": 488,
+                "created_at": "2016-12-14T23:34:26.103Z",
+                "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                "likes_count": 0,
+                "comments_count": 0,
+                "liked_by_me": false,
+                "photos": [
+                  {
+                    "id": 305,
+                    "created_at": "2016-12-14T23:34:26.105Z",
+                    "asset_url": "http:\/\/schimmel.name\/darien",
+                    "post_id": 488,
+                    "labels": [
+                      {
+                        "id": 254,
+                        "created_at": "2016-12-14T23:34:26.107Z",
+                        "position_top": 1,
+                        "position_left": 1,
+                        "label_type": "hash_tag",
+                        "tag": {
+                          "id": 318,
+                          "created_at": "2016-12-14T23:34:25.906Z",
+                          "name": "expedita",
+                          "url": null
+                        },
+                        "photo_id": 305,
+                        "formulas": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.109Z",
+                            "post_id": null,
+                            "service": {
+                              "id": 275,
+                              "created_at": "2016-12-14T23:34:25.927Z",
+                              "name": "Jenkins Group",
+                              "position": 1
+                            },
+                            "time": 1,
+                            "weight": 1,
+                            "volume": 1,
+                            "treatments": [
+                              {
+                                "id": 207,
+                                "created_at": "2016-12-14T23:34:26.111Z",
+                                "color": {
+                                  "id": 230,
+                                  "created_at": "2016-12-14T23:34:25.962Z",
+                                  "harmony_id": 242,
+                                  "code": "jdij2d390",
+                                  "start_hex": "996a96",
+                                  "end_hex": "41ffa9"
+                                },
+                                "weight": 1
+                              }
+                            ],
+                            "label_id": 254
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "videos": [
+                  {
+                    "id": 2,
+                    "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                    "post_id": 488,
+                    "created_at": "2016-12-14T23:34:26.114Z",
+                    "updated_at": "2016-12-14T23:34:26.114Z"
+                  }
+                ]
+              },
+              "user": {
+                "id": 2522,
+                "email": "pietro.schaden@windler.biz",
+                "created_at": "2016-12-11T16:18:02.453Z",
+                "updated_at": "2016-12-11T16:18:02.453Z",
+                "account_type": "consumer",
+                "first_name": "Dereck",
+                "last_name": "Blick",
+                "avatar_url": "https:\/\/robohash.org\/recusandaeautipsam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "27",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Unde labore quo voluptatem in beatae et impedit. Laboriosam consequatur ex aliquid et omnis rerum. Non eos consequatur velit. Eum ipsam et.",
+                "years_exp": 6,
+                "salon_id": null,
+                "career_opportunity": "Laudantium et ut exercitationem. Ut sit omnis minima sit provident et suscipit. Sequi pariatur impedit. Autem aperiam sit. Tempore beatae assumenda.",
+                "auth_token": "Jyhaxh4gaM7HPRMyGbsE"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/posts\/:post_id\/likes",
+        "authentication" : true,
+        "description": "Unliking a post as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "photos": [
+      {
+        "action": "PUT",
+        "uri": "\/photos\/:id",
+        "authentication" : true,
+        "description": "Updating a photo",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "photo[asset_url]" : {
+            "type" : "string",
+            "description" : "The url of the photo",
+            "required" : false
+          },
+          "photo[post_id]" : {
+            "type" : "integer",
+            "description" : "The id of the post",
+            "required" : false
+          },
+          "photo[video_url]" : {
+            "type" : "string",
+            "description" : "The url of the video",
+            "required" : false
+          }
+        },
+        "response": {
+          "photo": {
+            "id": 305,
+            "created_at": "2016-12-14T23:34:26.105Z",
+            "asset_url": "http:\/\/schimmel.name\/darien",
+            "post_id": 488,
+            "labels": [
+              {
+                "id": 254,
+                "created_at": "2016-12-14T23:34:26.107Z",
+                "position_top": 1,
+                "position_left": 1,
+                "label_type": "hash_tag",
+                "tag": {
+                  "id": 318,
+                  "created_at": "2016-12-14T23:34:25.906Z",
+                  "name": "expedita",
+                  "url": null
+                },
+                "photo_id": 305,
+                "formulas": [
+                  {
+                    "id": 207,
+                    "created_at": "2016-12-14T23:34:26.109Z",
+                    "post_id": null,
+                    "service": {
+                      "id": 275,
+                      "created_at": "2016-12-14T23:34:25.927Z",
+                      "name": "Jenkins Group",
+                      "position": 1
+                    },
+                    "time": 1,
+                    "weight": 1,
+                    "volume": 1,
+                    "treatments": [
+                      {
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.111Z",
+                        "color": {
+                          "id": 230,
+                          "created_at": "2016-12-14T23:34:25.962Z",
+                          "harmony_id": 242,
+                          "code": "jdij2d390",
+                          "start_hex": "996a96",
+                          "end_hex": "41ffa9"
+                        },
+                        "weight": 1
+                      }
+                    ],
+                    "label_id": 254
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "lines": [
+      {
+        "action": "GET",
+        "uri": "\/lines",
+        "authentication" : true,
+        "description": "DIsplaying available lines",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "brand_id" : {
+            "type" : "integer",
+            "description" : "Filtering the product lines by a specific brand",
+            "required" : false
+          }
+        },
+        "response": {
+          "lines": [
+            {
+              "id": 209,
+              "created_at": "2016-12-11T16:21:32.681Z",
+              "name": "Koelpin-Prohaska",
+              "brand": {
+                "id": 288,
+                "created_at": "2016-12-11T16:21:32.671Z",
+                "name": "Macejkovic-Ziemann",
+                "services": [
+
+                ]
+              },
+              "unit": "g"
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      }
+    ],
+    "messages": [
+      {
+        "action": "GET",
+        "uri": "\/conversations\/:conversation_id\/messages",
+        "authentication" : true,
+        "description": "Showing the messages in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "messages": [
+            {
+              "id": 221,
+              "user": {
+                "id": 2612,
+                "auth_token": "mtNNARXT6G7s4ywKBFAT",
+                "email": "oma.corwin@champlin.com",
+                "first_name": "Keon",
+                "last_name": "Jones",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "443",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+                "years_exp": 13,
+                "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "created_at": "2016-12-11T16:28:31.913Z",
+              "conversation_id": 194,
+              "body": "MyText",
+              "read" : true,
+              "url": "http://www.google.com",
+              "post": {
+                "id": 488,
+                "created_at": "2016-12-14T23:34:26.103Z",
+                "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                "likes_count": 0,
+                "comments_count": 0,
+                "liked_by_me": false,
+                "photos": [
+                  {
+                    "id": 305,
+                    "created_at": "2016-12-14T23:34:26.105Z",
+                    "asset_url": "http:\/\/schimmel.name\/darien",
+                    "post_id": 488,
+                    "labels": [
+                      {
+                        "id": 254,
+                        "created_at": "2016-12-14T23:34:26.107Z",
+                        "position_top": 1,
+                        "position_left": 1,
+                        "label_type": "hash_tag",
+                        "tag": {
+                          "id": 318,
+                          "created_at": "2016-12-14T23:34:25.906Z",
+                          "name": "expedita",
+                          "url": null
+                        },
+                        "photo_id": 305,
+                        "formulas": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.109Z",
+                            "post_id": null,
+                            "service": {
+                              "id": 275,
+                              "created_at": "2016-12-14T23:34:25.927Z",
+                              "name": "Jenkins Group",
+                              "position": 1
+                            },
+                            "time": 1,
+                            "weight": 1,
+                            "volume": 1,
+                            "treatments": [
+                              {
+                                "id": 207,
+                                "created_at": "2016-12-14T23:34:26.111Z",
+                                "color": {
+                                  "id": 230,
+                                  "created_at": "2016-12-14T23:34:25.962Z",
+                                  "harmony_id": 242,
+                                  "code": "jdij2d390",
+                                  "start_hex": "996a96",
+                                  "end_hex": "41ffa9"
+                                },
+                                "weight": 1
+                              }
+                            ],
+                            "label_id": 254
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "videos": [
+                  {
+                    "id": 2,
+                    "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                    "post_id": 488,
+                    "created_at": "2016-12-14T23:34:26.114Z",
+                    "updated_at": "2016-12-14T23:34:26.114Z"
+                  }
+                ]
+              }
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Showing a particular message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "message": {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "read" : true,
+            "url": "http://www.google.com",
+            "post": {
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+              "likes_count": 0,
+              "comments_count": 0,
+              "liked_by_me": false,
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "label_type": "hash_tag",
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id/\/read",
+        "authentication" : true,
+        "description": "Marking a particular message in a conversation as read",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "message": {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "read" : true,
+            "url": "http://www.google.com",
+            "post": {
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+              "likes_count": 0,
+              "comments_count": 0,
+              "liked_by_me": false,
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "label_type": "hash_tag",
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/conversations\/:conversation_id\/messages",
+        "authentication" : true,
+        "description": "Creating a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "message[body]" : {
+            "type" : "string",
+            "description" : "THe body of the message",
+            "required" : true
+          },
+          "message[url]" : {
+            "type" : "string",
+            "description" : "THe url link of the message",
+            "required" : false
+          },
+          "message[post_id]" : {
+            "type" : "integer",
+            "description" : "A post to attach to the message",
+            "required" : false
+          }
+        },
+        "response": {
+          "message":
+          {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "read" : true,
+            "url" : "http://www.google.com",
+            "post": {
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+              "likes_count": 0,
+              "comments_count": 0,
+              "liked_by_me": false,
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "label_type": "hash_tag",
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Updating a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "message[body]" : {
+            "type" : "string",
+            "description" : "THe body of the message",
+            "required" : true
+          },
+          "message[url]" : {
+            "type" : "string",
+            "description" : "THe url link of the message",
+            "required" : true
+          },
+          "message[post_id]" : {
+            "type" : "integer",
+            "description" : "A post to attach to the message",
+            "required" : true
+          }
+        },
+        "response": {
+          "message":
+          {
+            "id": 221,
+            "user": {
+              "id": 2612,
+              "auth_token": "mtNNARXT6G7s4ywKBFAT",
+              "email": "oma.corwin@champlin.com",
+              "first_name": "Keon",
+              "last_name": "Jones",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/deseruntnostrumodio.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "443",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Laudantium incidunt et neque doloremque. Facere expedita tempore cupiditate laboriosam. Ullam earum perferendis perspiciatis consequatur officiis esse.",
+              "years_exp": 13,
+              "career_opportunity": "Animi nostrum qui aliquid in. Ut rem similique aut consequuntur velit ducimus. Aut fugiat officia earum ratione repudiandae consequatur. Omnis velit quae fugiat quidem odit.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:28:31.913Z",
+            "conversation_id": 194,
+            "body": "MyText",
+            "read" : true,
+            "url" : "http://www.google.com",
+            "post": {
+              "id": 488,
+              "created_at": "2016-12-14T23:34:26.103Z",
+              "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+              "likes_count": 0,
+              "comments_count": 0,
+              "liked_by_me": false,
+              "photos": [
+                {
+                  "id": 305,
+                  "created_at": "2016-12-14T23:34:26.105Z",
+                  "asset_url": "http:\/\/schimmel.name\/darien",
+                  "post_id": 488,
+                  "labels": [
+                    {
+                      "id": 254,
+                      "created_at": "2016-12-14T23:34:26.107Z",
+                      "position_top": 1,
+                      "position_left": 1,
+                      "label_type": "hash_tag",
+                      "tag": {
+                        "id": 318,
+                        "created_at": "2016-12-14T23:34:25.906Z",
+                        "name": "expedita",
+                        "url": null
+                      },
+                      "photo_id": 305,
+                      "formulas": [
+                        {
+                          "id": 207,
+                          "created_at": "2016-12-14T23:34:26.109Z",
+                          "post_id": null,
+                          "service": {
+                            "id": 275,
+                            "created_at": "2016-12-14T23:34:25.927Z",
+                            "name": "Jenkins Group",
+                            "position": 1
+                          },
+                          "time": 1,
+                          "weight": 1,
+                          "volume": 1,
+                          "treatments": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.111Z",
+                              "color": {
+                                "id": 230,
+                                "created_at": "2016-12-14T23:34:25.962Z",
+                                "harmony_id": 242,
+                                "code": "jdij2d390",
+                                "start_hex": "996a96",
+                                "end_hex": "41ffa9"
+                              },
+                              "weight": 1
+                            }
+                          ],
+                          "label_id": 254
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "videos": [
+                {
+                  "id": 2,
+                  "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                  "post_id": 488,
+                  "created_at": "2016-12-14T23:34:26.114Z",
+                  "updated_at": "2016-12-14T23:34:26.114Z"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/conversations\/:conversation_id\/messages\/:id",
+        "authentication" : true,
+        "description": "Deleting a message in a conversation",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "notifications" : [
+      {
+        "action": "GET",
+        "uri": "\/notifications",
+        "authentication" : true,
+        "description": "Getting the logged in user's notifications",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "jd239jd920jd902jd902j3d"
+        },
+        "params" : {
+          "following" : {
+            "type" : "boolean",
+            "description" : "Getting the notifications of people you're following",
+            "required" : false
+          }
+        },
+        "response": {
+          "notifications": [
+            {
+              "id": 178,
+              "user": {
+                "id": 2661,
+                "auth_token": "g7UmRUmCgTBzmn-c11ik",
+                "email": "florian@schneider.net",
+                "first_name": "Idella",
+                "last_name": "Gibson",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/voluptatemdoloribusaliquam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "1283",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Aut et quasi sint voluptatem aut. Quia amet omnis necessitatibus. Eum quis saepe nam dolor omnis sint non.",
+                "years_exp": 15,
+                "career_opportunity": "Sed provident sint nobis sunt. Illum assumenda qui sed velit nulla officiis quibusdam. Delectus nostrum modi eaque accusamus vel aut. Reiciendis esse fuga aliquam architecto amet ducimus. Ex officiis autem nesciunt voluptatem.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "created_at": "2016-12-11T16:35:23.843Z",
+              "body": "Audreanne Lakin is now following you.",
+              "notifiable": {
+                "id": 117,
+                "created_at": "2016-12-11T16:35:23.826Z",
+                "follower": {
+                  "id": 2662,
+                  "auth_token": "L-fbz4WwR-E4LU4fKt9F",
+                  "email": "laurine@kutch.name",
+                  "first_name": "Audreanne",
+                  "last_name": "Lakin",
+                  "account_type": "consumer",
+                  "is_following": false,
+                  "salon": null,
+                  "brand": null,
+                  "avatar_url": "https:\/\/robohash.org\/magniexlabore.png?size=300x300&set=set1",
+                  "avatar_cloudinary_id": "747",
+                  "share_facebook": false,
+                  "share_twitter": false,
+                  "share_instagram": false,
+                  "share_pinterest": false,
+                  "share_tumblr": false,
+                  "prof_desc": "Quae numquam distinctio enim. Facere consectetur fugit delectus omnis assumenda repellendus. Veniam incidunt expedita et quaerat consequatur. Sed eum voluptatem repellendus corrupti blanditiis laborum eius. Quasi ipsam et maxime culpa eos aut.",
+                  "years_exp": 8,
+                  "career_opportunity": "Voluptatem et facilis cum natus. Soluta voluptatem recusandae. Exercitationem et consequatur culpa dolorum. Et inventore maxime neque.",
+                  "likes": [
+
+                  ],
+                  "educations": [
+
+                  ],
+                  "offerings": [
+
+                  ]
+                },
+                "following": {
+                  "id": 2661,
+                  "auth_token": "g7UmRUmCgTBzmn-c11ik",
+                  "email": "florian@schneider.net",
+                  "first_name": "Idella",
+                  "last_name": "Gibson",
+                  "account_type": "consumer",
+                  "is_following": false,
+                  "salon": null,
+                  "brand": null,
+                  "avatar_url": "https:\/\/robohash.org\/voluptatemdoloribusaliquam.png?size=300x300&set=set1",
+                  "avatar_cloudinary_id": "1283",
+                  "share_facebook": false,
+                  "share_twitter": false,
+                  "share_instagram": false,
+                  "share_pinterest": false,
+                  "share_tumblr": false,
+                  "prof_desc": "Aut et quasi sint voluptatem aut. Quia amet omnis necessitatibus. Eum quis saepe nam dolor omnis sint non.",
+                  "years_exp": 15,
+                  "career_opportunity": "Sed provident sint nobis sunt. Illum assumenda qui sed velit nulla officiis quibusdam. Delectus nostrum modi eaque accusamus vel aut. Reiciendis esse fuga aliquam architecto amet ducimus. Ex officiis autem nesciunt voluptatem.",
+                  "likes": [
+
+                  ],
+                  "educations": [
+
+                  ],
+                  "offerings": [
+
+                  ]
+                }
+              },
+              "initiator": {
+                "id": 2662,
+                "auth_token": "L-fbz4WwR-E4LU4fKt9F",
+                "email": "laurine@kutch.name",
+                "first_name": "Audreanne",
+                "last_name": "Lakin",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/magniexlabore.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "747",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Quae numquam distinctio enim. Facere consectetur fugit delectus omnis assumenda repellendus. Veniam incidunt expedita et quaerat consequatur. Sed eum voluptatem repellendus corrupti blanditiis laborum eius. Quasi ipsam et maxime culpa eos aut.",
+                "years_exp": 8,
+                "career_opportunity": "Voluptatem et facilis cum natus. Soluta voluptatem recusandae. Exercitationem et consequatur culpa dolorum. Et inventore maxime neque.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "notifiable_type": "Follow"
+            },
+            {
+              "id": 179,
+              "user": {
+                "id": 2661,
+                "auth_token": "g7UmRUmCgTBzmn-c11ik",
+                "email": "florian@schneider.net",
+                "first_name": "Idella",
+                "last_name": "Gibson",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/voluptatemdoloribusaliquam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "1283",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Aut et quasi sint voluptatem aut. Quia amet omnis necessitatibus. Eum quis saepe nam dolor omnis sint non.",
+                "years_exp": 15,
+                "career_opportunity": "Sed provident sint nobis sunt. Illum assumenda qui sed velit nulla officiis quibusdam. Delectus nostrum modi eaque accusamus vel aut. Reiciendis esse fuga aliquam architecto amet ducimus. Ex officiis autem nesciunt voluptatem.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "created_at": "2016-12-11T16:35:23.912Z",
+              "body": "Lindsay Davis liked your post.",
+              "notifiable": {
+                "id": 62,
+                "created_at": "2016-12-11T16:35:23.906Z",
+                "post": {
+                  "id": 488,
+                  "created_at": "2016-12-14T23:34:26.103Z",
+                  "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                  "likes_count": 0,
+                  "comments_count": 0,
+                  "liked_by_me": false,
+                  "photos": [
+                    {
+                      "id": 305,
+                      "created_at": "2016-12-14T23:34:26.105Z",
+                      "asset_url": "http:\/\/schimmel.name\/darien",
+                      "post_id": 488,
+                      "labels": [
+                        {
+                          "id": 254,
+                          "created_at": "2016-12-14T23:34:26.107Z",
+                          "position_top": 1,
+                          "position_left": 1,
+                          "label_type": "hash_tag",
+                          "tag": {
+                            "id": 318,
+                            "created_at": "2016-12-14T23:34:25.906Z",
+                            "name": "expedita",
+                            "url": null
+                          },
+                          "photo_id": 305,
+                          "formulas": [
+                            {
+                              "id": 207,
+                              "created_at": "2016-12-14T23:34:26.109Z",
+                              "post_id": null,
+                              "service": {
+                                "id": 275,
+                                "created_at": "2016-12-14T23:34:25.927Z",
+                                "name": "Jenkins Group",
+                                "position": 1
+                              },
+                              "time": 1,
+                              "weight": 1,
+                              "volume": 1,
+                              "treatments": [
+                                {
+                                  "id": 207,
+                                  "created_at": "2016-12-14T23:34:26.111Z",
+                                  "color": {
+                                    "id": 230,
+                                    "created_at": "2016-12-14T23:34:25.962Z",
+                                    "harmony_id": 242,
+                                    "code": "jdij2d390",
+                                    "start_hex": "996a96",
+                                    "end_hex": "41ffa9"
+                                  },
+                                  "weight": 1
+                                }
+                              ],
+                              "label_id": 254
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "videos": [
+                    {
+                      "id": 2,
+                      "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                      "post_id": 488,
+                      "created_at": "2016-12-14T23:34:26.114Z",
+                      "updated_at": "2016-12-14T23:34:26.114Z"
+                    }
+                  ]
+                },
+                "user": {
+                  "id": 2663,
+                  "email": "marilou.bashirian@bahringer.biz",
+                  "created_at": "2016-12-11T16:35:23.896Z",
+                  "updated_at": "2016-12-11T16:35:23.896Z",
+                  "account_type": "consumer",
+                  "first_name": "Lindsay",
+                  "last_name": "Davis",
+                  "avatar_url": "https:\/\/robohash.org\/laborehicvoluptatem.png?size=300x300&set=set1",
+                  "avatar_cloudinary_id": "382",
+                  "share_facebook": false,
+                  "share_twitter": false,
+                  "share_instagram": false,
+                  "share_pinterest": false,
+                  "share_tumblr": false,
+                  "prof_desc": "Mollitia nostrum sint aut magni alias molestias. Nesciunt tempora autem quam sequi velit odit. Ea officia expedita eveniet. Animi similique magni impedit.",
+                  "years_exp": 2,
+                  "salon_id": null,
+                  "career_opportunity": "Amet saepe fugit possimus similique. Fuga ratione et beatae quas architecto. Repellat itaque ea nobis porro repudiandae.",
+                  "auth_token": "kZjJ9iCrGr5LssT7nVzQ"
+                }
+              },
+              "initiator": {
+                "id": 2663,
+                "auth_token": "kZjJ9iCrGr5LssT7nVzQ",
+                "email": "marilou.bashirian@bahringer.biz",
+                "first_name": "Lindsay",
+                "last_name": "Davis",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/laborehicvoluptatem.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "382",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Mollitia nostrum sint aut magni alias molestias. Nesciunt tempora autem quam sequi velit odit. Ea officia expedita eveniet. Animi similique magni impedit.",
+                "years_exp": 2,
+                "career_opportunity": "Amet saepe fugit possimus similique. Fuga ratione et beatae quas architecto. Repellat itaque ea nobis porro repudiandae.",
+                "likes": [
+                  {
+                    "id": 62,
+                    "created_at": "2016-12-11T16:35:23.906Z",
+                    "post": {
+                      "id": 488,
+                      "created_at": "2016-12-14T23:34:26.103Z",
+                      "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+                      "likes_count": 0,
+                      "comments_count": 0,
+                      "liked_by_me": false,
+                      "photos": [
+                        {
+                          "id": 305,
+                          "created_at": "2016-12-14T23:34:26.105Z",
+                          "asset_url": "http:\/\/schimmel.name\/darien",
+                          "post_id": 488,
+                          "labels": [
+                            {
+                              "id": 254,
+                              "created_at": "2016-12-14T23:34:26.107Z",
+                              "position_top": 1,
+                              "position_left": 1,
+                              "label_type": "hash_tag",
+                              "tag": {
+                                "id": 318,
+                                "created_at": "2016-12-14T23:34:25.906Z",
+                                "name": "expedita",
+                                "url": null
+                              },
+                              "photo_id": 305,
+                              "formulas": [
+                                {
+                                  "id": 207,
+                                  "created_at": "2016-12-14T23:34:26.109Z",
+                                  "post_id": null,
+                                  "service": {
+                                    "id": 275,
+                                    "created_at": "2016-12-14T23:34:25.927Z",
+                                    "name": "Jenkins Group",
+                                    "position": 1
+                                  },
+                                  "time": 1,
+                                  "weight": 1,
+                                  "volume": 1,
+                                  "treatments": [
+                                    {
+                                      "id": 207,
+                                      "created_at": "2016-12-14T23:34:26.111Z",
+                                      "color": {
+                                        "id": 230,
+                                        "created_at": "2016-12-14T23:34:25.962Z",
+                                        "harmony_id": 242,
+                                        "code": "jdij2d390",
+                                        "start_hex": "996a96",
+                                        "end_hex": "41ffa9"
+                                      },
+                                      "weight": 1
+                                    }
+                                  ],
+                                  "label_id": 254
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "videos": [
+                        {
+                          "id": 2,
+                          "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                          "post_id": 488,
+                          "created_at": "2016-12-14T23:34:26.114Z",
+                          "updated_at": "2016-12-14T23:34:26.114Z"
+                        }
+                      ]
+                    },
+                    "user": {
+                      "id": 2663,
+                      "email": "marilou.bashirian@bahringer.biz",
+                      "created_at": "2016-12-11T16:35:23.896Z",
+                      "updated_at": "2016-12-11T16:35:23.896Z",
+                      "account_type": "consumer",
+                      "first_name": "Lindsay",
+                      "last_name": "Davis",
+                      "avatar_url": "https:\/\/robohash.org\/laborehicvoluptatem.png?size=300x300&set=set1",
+                      "avatar_cloudinary_id": "382",
+                      "share_facebook": false,
+                      "share_twitter": false,
+                      "share_instagram": false,
+                      "share_pinterest": false,
+                      "share_tumblr": false,
+                      "prof_desc": "Mollitia nostrum sint aut magni alias molestias. Nesciunt tempora autem quam sequi velit odit. Ea officia expedita eveniet. Animi similique magni impedit.",
+                      "years_exp": 2,
+                      "salon_id": null,
+                      "career_opportunity": "Amet saepe fugit possimus similique. Fuga ratione et beatae quas architecto. Repellat itaque ea nobis porro repudiandae.",
+                      "auth_token": "kZjJ9iCrGr5LssT7nVzQ"
+                    }
+                  }
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "notifiable_type": "Like"
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/notifications\/:id",
+        "authentication" : true,
+        "description": "Getting a specific notification",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json",
+          "Authorization": "jd239jd920jd902jd902j3d"
+        },
+        "response": {
+          "notification" : {
+            "id": 178,
+            "user": {
+              "id": 2661,
+              "auth_token": "g7UmRUmCgTBzmn-c11ik",
+              "email": "florian@schneider.net",
+              "first_name": "Idella",
+              "last_name": "Gibson",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/voluptatemdoloribusaliquam.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1283",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Aut et quasi sint voluptatem aut. Quia amet omnis necessitatibus. Eum quis saepe nam dolor omnis sint non.",
+              "years_exp": 15,
+              "career_opportunity": "Sed provident sint nobis sunt. Illum assumenda qui sed velit nulla officiis quibusdam. Delectus nostrum modi eaque accusamus vel aut. Reiciendis esse fuga aliquam architecto amet ducimus. Ex officiis autem nesciunt voluptatem.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "created_at": "2016-12-11T16:35:23.843Z",
+            "body": "Audreanne Lakin is now following you.",
+            "notifiable": {
+              "id": 117,
+              "created_at": "2016-12-11T16:35:23.826Z",
+              "follower": {
+                "id": 2662,
+                "auth_token": "L-fbz4WwR-E4LU4fKt9F",
+                "email": "laurine@kutch.name",
+                "first_name": "Audreanne",
+                "last_name": "Lakin",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/magniexlabore.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "747",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Quae numquam distinctio enim. Facere consectetur fugit delectus omnis assumenda repellendus. Veniam incidunt expedita et quaerat consequatur. Sed eum voluptatem repellendus corrupti blanditiis laborum eius. Quasi ipsam et maxime culpa eos aut.",
+                "years_exp": 8,
+                "career_opportunity": "Voluptatem et facilis cum natus. Soluta voluptatem recusandae. Exercitationem et consequatur culpa dolorum. Et inventore maxime neque.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              },
+              "following": {
+                "id": 2661,
+                "auth_token": "g7UmRUmCgTBzmn-c11ik",
+                "email": "florian@schneider.net",
+                "first_name": "Idella",
+                "last_name": "Gibson",
+                "account_type": "consumer",
+                "is_following": false,
+                "salon": null,
+                "brand": null,
+                "avatar_url": "https:\/\/robohash.org\/voluptatemdoloribusaliquam.png?size=300x300&set=set1",
+                "avatar_cloudinary_id": "1283",
+                "share_facebook": false,
+                "share_twitter": false,
+                "share_instagram": false,
+                "share_pinterest": false,
+                "share_tumblr": false,
+                "prof_desc": "Aut et quasi sint voluptatem aut. Quia amet omnis necessitatibus. Eum quis saepe nam dolor omnis sint non.",
+                "years_exp": 15,
+                "career_opportunity": "Sed provident sint nobis sunt. Illum assumenda qui sed velit nulla officiis quibusdam. Delectus nostrum modi eaque accusamus vel aut. Reiciendis esse fuga aliquam architecto amet ducimus. Ex officiis autem nesciunt voluptatem.",
+                "likes": [
+
+                ],
+                "educations": [
+
+                ],
+                "offerings": [
+
+                ]
+              }
+            },
+            "initiator": {
+              "id": 2662,
+              "auth_token": "L-fbz4WwR-E4LU4fKt9F",
+              "email": "laurine@kutch.name",
+              "first_name": "Audreanne",
+              "last_name": "Lakin",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/magniexlabore.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "747",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Quae numquam distinctio enim. Facere consectetur fugit delectus omnis assumenda repellendus. Veniam incidunt expedita et quaerat consequatur. Sed eum voluptatem repellendus corrupti blanditiis laborum eius. Quasi ipsam et maxime culpa eos aut.",
+              "years_exp": 8,
+              "career_opportunity": "Voluptatem et facilis cum natus. Soluta voluptatem recusandae. Exercitationem et consequatur culpa dolorum. Et inventore maxime neque.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            },
+            "notifiable_type": "Follow"
+          }
+        }
+      }
+    ],
+    "offerings": [
+      {
+        "action": "GET",
+        "uri": "\/users\/:user_id\/offerings",
+        "authentication" : true,
+        "description": "Getting the user's offerings",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+           "offerings":[{
+              "id":53,
+              "created_at":"2016-12-17T00:28:24.842Z",
+              "price":1,
+              "user_id":687,
+              "service":{
+                 "id":111,
+                 "created_at":"2016-12-17T00:28:24.767Z",
+                 "name":"Jacobi-Miller",
+                 "position":1
+              },
+              "category":{
+                 "id":67,
+                 "created_at":"2016-12-17T00:28:24.761Z",
+                 "name":"Reichert, Cartwright and Schneider"
+              }
+           }]
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users\/:user_id\/offerings",
+        "authentication" : true,
+        "description": "Creating a user offerings",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "offering[price]" : {
+            "type" : "integer",
+            "description" : "The price of the offering",
+            "required" : false
+          },
+          "offering[service_id]" : {
+            "type" : "integer",
+            "description" : "The id of the service",
+            "required" : false
+          },
+          "offering[category_id]" : {
+            "type" : "integer",
+            "description" : "The id of the category",
+            "required" : false
+          }
+        },
+        "response" : {
+           "offering":{
+              "id":53,
+              "created_at":"2016-12-17T00:28:24.842Z",
+              "price":1,
+              "user_id":687,
+              "service":{
+                 "id":111,
+                 "created_at":"2016-12-17T00:28:24.767Z",
+                 "name":"Jacobi-Miller",
+                 "position":1
+              },
+              "category":{
+                 "id":67,
+                 "created_at":"2016-12-17T00:28:24.761Z",
+                 "name":"Reichert, Cartwright and Schneider"
+              }
+           }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/users\/:user_id\/offerings\/:id",
+        "authentication" : true,
+        "description": "Updating a user's offerings",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "offering[price]" : {
+            "type" : "integer",
+            "description" : "The price of the offering",
+            "required" : false
+          },
+          "offering[service_id]" : {
+            "type" : "integer",
+            "description" : "The id of the service",
+            "required" : false
+          },
+          "offering[category_id]" : {
+            "type" : "integer",
+            "description" : "The id of the category",
+            "required" : false
+          }
+        },
+        "response" : {
+           "offering":{
+              "id":53,
+              "created_at":"2016-12-17T00:28:24.842Z",
+              "price":1,
+              "user_id":687,
+              "service":{
+                 "id":111,
+                 "created_at":"2016-12-17T00:28:24.767Z",
+                 "name":"Jacobi-Miller",
+                 "position":1
+              },
+              "category":{
+                 "id":67,
+                 "created_at":"2016-12-17T00:28:24.761Z",
+                 "name":"Reichert, Cartwright and Schneider"
+              }
+           }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:user_id\/offerings\/:id",
+        "authentication" : true,
+        "description": "Deleting a user offering",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "status" : 204
+        }
+      }
+    ],
+    "posts": [
+      {
+        "action": "GET",
+        "uri": "\/posts",
+        "authentication" : true,
+        "description": "Getting the post feed for the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "popular" : {
+            "type" : "boolean",
+            "description" : "Setting the popuar toggle filters by popular",
+            "required" : false
+          },
+          "favorites" : {
+            "type" : "boolean",
+            "description" : "Setting the favorites toggle filters by popular",
+            "required" : false
+          }
+        },
+        "response": {
+           "posts":[
+              {
+                 "id":12,
+                 "created_at":"2016-12-19T18:29:00.305Z",
+                 "description":"Ea asperiores voluptates et. Hic eos sunt culpa aut cupiditate aut ut. Beatae officiis quasi. Qui non voluptatem temporibus et sed.",
+                 "likes_count":0,
+                 "comments_count":0,
+                 "liked_by_me":false,
+                 "photos":[
+                    {
+                       "id":10,
+                       "created_at":"2016-12-19T18:29:00.475Z",
+                       "asset_url":"http://collieradams.com/mitchell.mueller",
+                       "post_id":12,
+                       "labels":[
+                          {
+                             "id":9,
+                             "created_at":"2016-12-19T18:29:01.105Z",
+                             "position_top":1,
+                             "position_left":1,
+                             "tag":{
+                                "id":9,
+                                "created_at":"2016-12-19T18:29:01.073Z",
+                                "name":"et",
+                                "last_photo":"http://collieradams.com/mitchell.mueller"
+                             },
+                             "photo_id":10,
+                             "label_type":"",
+                             "name":"Cassin and Sons",
+                             "url":"http://kiehn.net/audrey.stehr",
+                             "formulas":[
+                                {
+                                   "id":8,
+                                   "created_at":"2016-12-19T18:29:01.353Z",
+                                   "post_id":null,
+                                   "service":{
+                                      "id":8,
+                                      "created_at":"2016-12-19T18:29:01.325Z",
+                                      "name":"Quitzon, Hilpert and Strosin",
+                                      "position":1
+                                   },
+                                   "time":1,
+                                   "weight":1,
+                                   "volume":1,
+                                   "treatments":[
+                                      {
+                                         "id":8,
+                                         "created_at":"2016-12-19T18:29:01.681Z",
+                                         "color":{
+                                            "id":8,
+                                            "created_at":"2016-12-19T18:29:01.650Z",
+                                            "harmony_id":8,
+                                            "code":"jdij2d390",
+                                            "start_hex":"45b75b",
+                                            "end_hex":"696188"
+                                         },
+                                         "weight":1
+                                      }
+                                   ],
+                                   "line":{
+                                      "id":8,
+                                      "created_at":"2016-12-19T18:29:00.051Z",
+                                      "name":"McLaughlin-Hamill",
+                                      "brand":{
+                                         "id":8,
+                                         "created_at":"2016-12-19T18:28:59.980Z",
+                                         "name":"Boyle, Frami and Tremblay",
+                                         "services":[
+
+                                         ]
+                                      },
+                                      "unit":"g"
+                                   }
+                                }
+                             ]
+                          }
+                       ]
+                    }
+                 ],
+                 "videos":[
+
+                 ],
+                 "user":{
+                    "id":13,
+                    "auth_token":"rSr_QmYvHsqvPzQyypLv",
+                    "email":"albin@herzog.net",
+                    "first_name":"Randi",
+                    "last_name":"Leannon",
+                    "likes_count":0,
+                    "followers_count":0,
+                    "account_type":"consumer",
+                    "is_following_me":false,
+                    "is_followed_by_me":false,
+                    "salon":null,
+                    "brand":null,
+                    "avatar_url":"https://robohash.org/illodoloremqueex.png?size=300x300\u0026set=set1",
+                    "avatar_cloudinary_id":"845",
+                    "share_facebook":false,
+                    "share_twitter":false,
+                    "share_instagram":false,
+                    "share_pinterest":false,
+                    "share_tumblr":false,
+                    "prof_desc":"Nostrum sint consequuntur est itaque. Eaque non deleniti qui ut necessitatibus praesentium in. Quasi autem ut voluptate a laudantium.",
+                    "years_exp":12,
+                    "career_opportunity":"Consequatur perspiciatis natus. Occaecati voluptas consequatur non nihil nam qui sint. Ipsam ducimus vero voluptas.",
+                    "unread_messages_count":0
+                 }
+              }
+           ],
+           "meta":{
+              "current_page":1,
+              "next_page":null,
+              "prev_page":null,
+              "total_pages":1,
+              "total_count":1
+           }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/posts\/:id",
+        "authentication" : true,
+        "description": "Getting extended information on a post",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+           "post":
+              {
+                 "id":12,
+                 "created_at":"2016-12-19T18:29:00.305Z",
+                 "description":"Ea asperiores voluptates et. Hic eos sunt culpa aut cupiditate aut ut. Beatae officiis quasi. Qui non voluptatem temporibus et sed.",
+                 "likes_count":0,
+                 "comments_count":0,
+                 "liked_by_me":false,
+                 "photos":[
+                    {
+                       "id":10,
+                       "created_at":"2016-12-19T18:29:00.475Z",
+                       "asset_url":"http://collieradams.com/mitchell.mueller",
+                       "post_id":12,
+                       "labels":[
+                          {
+                             "id":9,
+                             "created_at":"2016-12-19T18:29:01.105Z",
+                             "position_top":1,
+                             "position_left":1,
+                             "tag":{
+                                "id":9,
+                                "created_at":"2016-12-19T18:29:01.073Z",
+                                "name":"et",
+                                "last_photo":"http://collieradams.com/mitchell.mueller"
+                             },
+                             "photo_id":10,
+                             "label_type":"",
+                             "name":"Cassin and Sons",
+                             "url":"http://kiehn.net/audrey.stehr",
+                             "formulas":[
+                                {
+                                   "id":8,
+                                   "created_at":"2016-12-19T18:29:01.353Z",
+                                   "post_id":null,
+                                   "service":{
+                                      "id":8,
+                                      "created_at":"2016-12-19T18:29:01.325Z",
+                                      "name":"Quitzon, Hilpert and Strosin",
+                                      "position":1
+                                   },
+                                   "time":1,
+                                   "weight":1,
+                                   "volume":1,
+                                   "treatments":[
+                                      {
+                                         "id":8,
+                                         "created_at":"2016-12-19T18:29:01.681Z",
+                                         "color":{
+                                            "id":8,
+                                            "created_at":"2016-12-19T18:29:01.650Z",
+                                            "harmony_id":8,
+                                            "code":"jdij2d390",
+                                            "start_hex":"45b75b",
+                                            "end_hex":"696188"
+                                         },
+                                         "weight":1
+                                      }
+                                   ],
+                                   "line":{
+                                      "id":8,
+                                      "created_at":"2016-12-19T18:29:00.051Z",
+                                      "name":"McLaughlin-Hamill",
+                                      "brand":{
+                                         "id":8,
+                                         "created_at":"2016-12-19T18:28:59.980Z",
+                                         "name":"Boyle, Frami and Tremblay",
+                                         "services":[
+
+                                         ]
+                                      },
+                                      "unit":"g"
+                                   }
+                                }
+                             ]
+                          }
+                       ]
+                    }
+                 ],
+                 "videos":[
+
+                 ],
+                 "user":{
+                    "id":13,
+                    "auth_token":"rSr_QmYvHsqvPzQyypLv",
+                    "email":"albin@herzog.net",
+                    "first_name":"Randi",
+                    "last_name":"Leannon",
+                    "likes_count":0,
+                    "followers_count":0,
+                    "account_type":"consumer",
+                    "is_following_me":false,
+                    "is_followed_by_me":false,
+                    "salon":null,
+                    "brand":null,
+                    "avatar_url":"https://robohash.org/illodoloremqueex.png?size=300x300\u0026set=set1",
+                    "avatar_cloudinary_id":"845",
+                    "share_facebook":false,
+                    "share_twitter":false,
+                    "share_instagram":false,
+                    "share_pinterest":false,
+                    "share_tumblr":false,
+                    "prof_desc":"Nostrum sint consequuntur est itaque. Eaque non deleniti qui ut necessitatibus praesentium in. Quasi autem ut voluptate a laudantium.",
+                    "years_exp":12,
+                    "career_opportunity":"Consequatur perspiciatis natus. Occaecati voluptas consequatur non nihil nam qui sint. Ipsam ducimus vero voluptas.",
+                    "unread_messages_count":0
+                 }
+              }
+            ,
+           "meta":{
+              "current_page":1,
+              "next_page":null,
+              "prev_page":null,
+              "total_pages":1,
+              "total_count":1
+           }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/posts",
+        "authentication" : true,
+        "description": "Creating a post as the logged in user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "post[description]" : {
+            "type" : "string",
+            "description" : "This is the body of the post",
+            "required" : true
+          },
+          "post[photos_attributes][asset_url]" : {
+            "type" : "string",
+            "description" : "This is the service of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][tag_id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the tag to associate the post with",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_top]" : {
+            "type" : "integer",
+            "description" : "This is the position from the top to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_left]" : {
+            "type" : "integer",
+            "description" : "This is the position from the left to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][service_id]" : {
+            "type" : "integer",
+            "description" : "This is the service of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][weight]" : {
+            "type" : "integer",
+            "description" : "This is the weight of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][volume]" : {
+            "type" : "integer",
+            "description" : "This is the volume of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][time]" : {
+            "type" : "integer",
+            "description" : "This is the time of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][line_id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the color line",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][weight]" : {
+            "type" : "integer",
+            "description" : "This is the weight of the formula treatment",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][color_id]" : {
+            "type" : "integer",
+            "description" : "This is the color id of the formula treatment",
+            "required" : true
+          }
+        },
+        "response": {
+          "post": {
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+            "likes_count": 0,
+            "comments_count": 0,
+            "liked_by_me": false,
+            "photos": [
+              {
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
+                  {
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "label_type": "hash_tag",
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
+                    },
+                    "photo_id": 305,
+                    "formulas": [
+                      {
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
+                        },
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "line":{
+                           "id":8,
+                           "created_at":"2016-12-19T18:29:00.051Z",
+                           "name":"McLaughlin-Hamill",
+                           "brand":{
+                              "id":8,
+                              "created_at":"2016-12-19T18:28:59.980Z",
+                              "name":"Boyle, Frami and Tremblay",
+                              "services":[
+
+                              ]
+                           },
+                           "unit":"g"
+                        },
+                        "label_id": 254
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "videos": [
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/posts\/:id",
+        "authentication" : true,
+        "description": "Updating a post",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "post[description]" : {
+            "type" : "string",
+            "description" : "This is the body of the post",
+            "required" : true
+          },
+          "post[photos_attributes][0][asset_url]" : {
+            "type" : "string",
+            "description" : "This is the service of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][id]" : {
+            "type" : "string",
+            "description" : "This is the id of the photo to update",
+            "required" : true
+          },
+          "post[photos_attributes][0][_destroy]" : {
+            "type" : "string",
+            "description" : "Set the destroy flag to delete teh photo",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the label to update",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][_destroy]" : {
+            "type" : "integer",
+            "description" : "Set the _destroy flag to remove the label",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][tag_id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the tag to associate the post with",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_top]" : {
+            "type" : "integer",
+            "description" : "This is the position from the top to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][position_left]" : {
+            "type" : "integer",
+            "description" : "This is the position from the left to place the tag",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][id]" : {
+            "type" : "integer",
+            "description" : "This is id of the formula to update",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][_destroy]" : {
+            "type" : "integer",
+            "description" : "Set the _destroy flag to delete teh formula from the photo",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][service_id]" : {
+            "type" : "integer",
+            "description" : "This is the service of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][weight]" : {
+            "type" : "integer",
+            "description" : "This is the weight of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][volume]" : {
+            "type" : "integer",
+            "description" : "This is the volume of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][time]" : {
+            "type" : "integer",
+            "description" : "This is the time of the formula to add",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][line_id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the color line",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][id]" : {
+            "type" : "integer",
+            "description" : "This is the id of the formula treatment",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][_destroy]" : {
+            "type" : "integer",
+            "description" : "Set the _destroy flag to delete the treatment from the formula",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][photos_attributes][0][formulas_attributes][0][treatments_attributes][weight]" : {
+            "type" : "integer",
+            "description" : "This is the weight of the formula treatment",
+            "required" : true
+          },
+          "post[photos_attributes][0][labels_attributes][0][formulas_attributes][0][treatments_attributes][color_id]" : {
+            "type" : "integer",
+            "description" : "This is the color id of the formula treatment",
+            "required" : true
+          }
+        },
+        "response": {
+          "post": {
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+            "likes_count": 0,
+            "comments_count": 0,
+            "liked_by_me": false,
+            "photos": [
+              {
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
+                  {
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "label_type": "hash_tag",
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
+                    },
+                    "photo_id": 305,
+                    "formulas": [
+                      {
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
+                        },
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "line":{
+                           "id":8,
+                           "created_at":"2016-12-19T18:29:00.051Z",
+                           "name":"McLaughlin-Hamill",
+                           "brand":{
+                              "id":8,
+                              "created_at":"2016-12-19T18:28:59.980Z",
+                              "name":"Boyle, Frami and Tremblay",
+                              "services":[
+
+                              ]
+                           },
+                           "unit":"g"
+                        },
+                        "label_id": 254
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "videos": [
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/posts\/:post_id",
+        "authentication" : true,
+        "description": "Deleting a post",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ],
+    "products": [
+      {
+        "action": "GET",
+        "uri": "\/products",
+        "authentication" : true,
+        "description": "Getting available products",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "q" : {
+            "type" : "string",
+            "description" : "The name to search by",
+            "required" : false
+          }
+        },
+        "response": {
+          "products": [
+            {
+              "id": 17,
+              "created_at": "2016-12-11T17:53:04.165Z",
+              "name": "Synergistic Granite Bag",
+              "tag": {
+                "id": 358,
+                "created_at": "2016-12-11T17:53:04.149Z",
+                "name": "adipisci",
+                "url": null
+              }
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      }
+    ],
+    "salons" : [
+      {
+        "action": "GET",
+        "uri": "\/salons",
+        "authentication" : true,
+        "description": "Getting available salons",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "q" : {
+            "type" : "string",
+            "description" : "The name to search by",
+            "required" : false
+          },
+          "latitude" : {
+            "type" : "float",
+            "description" : "The latitude to search with",
+            "required" : false
+          },
+          "longitude" : {
+            "type" : "string",
+            "description" : "The longitude to search with",
+            "required" : false
+          },
+          "radius" : {
+            "type" : "string",
+            "description" : "the radius to search with (in miles)",
+            "required" : false
+          },
+          "zipcode" : {
+            "type" : "string",
+            "description" : "the the zipcode to search nearby",
+            "required" : false
+          }
+        },
+        "response": {
+          "users": [
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/salons\/:id",
+        "authentication" : true,
+        "description": "Getting salon info",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "salon":
+            {
+              "id": 55,
+              "created_at": "2016-12-11T17:59:30.230Z",
+              "name": "Gutmann-Christiansen",
+              "info": "Hic suscipit numquam dicta est perspiciatis explicabo sint. Quis quam dicta provident. Aliquid dolorum ducimus laborum est repellendus possimus commodi.",
+              "address": "2120 Skiles Roads",
+              "city": "Raymundoview",
+              "state": "Missouri",
+              "zip": "64779",
+              "website": "http:\/\/kuhlmanthompson.info\/kristofer_oconnell",
+              "phone": "(607) 194-5835"
+            }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/salons\/:id\/stylists",
+        "authentication" : true,
+        "description": "Getting stylists of salon info",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "users": [
+
+            ]
+          }
+      },
+      {
+        "action": "POST",
+        "uri": "\/salons",
+        "authentication" : true,
+        "description": "Creating a salon",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "salon[name]" : {
+            "type" : "string",
+            "description" : "The name of the salon",
+            "required" : true
+          },
+          "salon[info]" : {
+            "type" : "string",
+            "description" : "The info of the salon",
+            "required" : true
+          },
+          "salon[address]" : {
+            "type" : "string",
+            "description" : "The address of the salon",
+            "required" : true
+          },
+          "salon[city]" : {
+            "type" : "string",
+            "description" : "The city of the salon",
+            "required" : true
+          },
+          "salon[state]" : {
+            "type" : "string",
+            "description" : "The state of the salon",
+            "required" : true
+          },
+          "salon[zip]" : {
+            "type" : "string",
+            "description" : "The zip of the salon",
+            "required" : true
+          },
+          "salon[phone]" : {
+            "type" : "string",
+            "description" : "The phone of the salon",
+            "required" : true
+          },
+          "salon[website]" : {
+            "type" : "string",
+            "description" : "The website of the salon",
+            "required" : true
+          }
+        },
+        "response": {
+          "salon":
+            {
+              "id": 55,
+              "created_at": "2016-12-11T17:59:30.230Z",
+              "name": "Gutmann-Christiansen",
+              "info": "Hic suscipit numquam dicta est perspiciatis explicabo sint. Quis quam dicta provident. Aliquid dolorum ducimus laborum est repellendus possimus commodi.",
+              "address": "2120 Skiles Roads",
+              "city": "Raymundoview",
+              "state": "Missouri",
+              "zip": "64779",
+              "website": "http:\/\/kuhlmanthompson.info\/kristofer_oconnell",
+              "phone": "(607) 194-5835"
+            }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/salons\/:id",
+        "authentication" : true,
+        "description": "Updating a salon",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "salon[name]" : {
+            "type" : "string",
+            "description" : "The name of the salon",
+            "required" : true
+          },
+          "salon[info]" : {
+            "type" : "string",
+            "description" : "The info of the salon",
+            "required" : true
+          },
+          "salon[address]" : {
+            "type" : "string",
+            "description" : "The address of the salon",
+            "required" : true
+          },
+          "salon[city]" : {
+            "type" : "string",
+            "description" : "The city of the salon",
+            "required" : true
+          },
+          "salon[state]" : {
+            "type" : "string",
+            "description" : "The state of the salon",
+            "required" : true
+          },
+          "salon[zip]" : {
+            "type" : "string",
+            "description" : "The zip of the salon",
+            "required" : true
+          },
+          "salon[phone]" : {
+            "type" : "string",
+            "description" : "The phone of the salon",
+            "required" : true
+          },
+          "salon[website]" : {
+            "type" : "string",
+            "description" : "The website of the salon",
+            "required" : true
+          }
+        },
+        "response": {
+          "salon":
+            {
+              "id": 55,
+              "created_at": "2016-12-11T17:59:30.230Z",
+              "name": "Gutmann-Christiansen",
+              "info": "Hic suscipit numquam dicta est perspiciatis explicabo sint. Quis quam dicta provident. Aliquid dolorum ducimus laborum est repellendus possimus commodi.",
+              "address": "2120 Skiles Roads",
+              "city": "Raymundoview",
+              "state": "Missouri",
+              "zip": "64779",
+              "website": "http:\/\/kuhlmanthompson.info\/kristofer_oconnell",
+              "phone": "(607) 194-5835"
+            }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/salons\/:id",
+        "authentication" : true,
+        "description": "Deleting a salon",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "status" : 204
+        }
+      }
+    ],
+    "services": [
+      {
+        "action": "GET",
+        "uri": "\/services",
+        "authentication" : true,
+        "description": "Getting services",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params": {
+          "brand_id": {
+            "type" : "integer",
+            "description" : "The brand to filter by",
+            "required" : false
+          }
+        },
+        "response" : {
+          "services": [
+            {
+              "id": 401,
+              "created_at": "2016-12-11T18:18:03.270Z",
+              "name": "Lind and Sons",
+              "position": 1
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/services\/:id",
+        "authentication" : true,
+        "description": "Getting a service",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params": {
+          "brand_id": {
+            "type" : "integer",
+            "description" : "The brand to filter by",
+            "required" : false
+          }
+        },
+        "response" : {
+          "service":
+            {
+              "id": 401,
+              "created_at": "2016-12-11T18:18:03.270Z",
+              "name": "Lind and Sons",
+              "position": 1
+            }
+        }
+      }
+    ],
+    "sessions": [
+      {
+        "action": "POST",
+        "uri": "\/sessions",
+        "authentication" : true,
+        "description": "Signing in a user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "session[email]" : {
+            "type" : "string",
+            "description" : "The user email",
+            "required" : true
+          },
+          "session[password]" : {
+            "type" : "string",
+            "description" : "The user password",
+            "required" : true
+          }
+        },
+        "response" : {
+          "user":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/sessions\/:auth_token",
+        "authentication" : true,
+        "description": "Logging out a user and resetting auth token",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "status": 204
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/sessions\/facebook",
+        "authentication" : true,
+        "description": "Signing in or creating a user with facebook",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "facebook_token" : {
+            "type" : "string",
+            "description" : "The token returned from facebook authentication",
+            "required" : true
+          }
+        },
+        "response" : {
+          "user":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/sessions\/instagram",
+        "authentication" : true,
+        "description": "Signing in or creating a user with instagram",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "instagram_token" : {
+            "type" : "string",
+            "description" : "The token returned from instagram authentication",
+            "required" : true
+          }
+        },
+        "response" : {
+          "user":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ]
+            }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/sessions\/recover",
+        "authentication" : true,
+        "description": "Sending a password recovery email",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "email" : {
+            "type" : "string",
+            "description" : "The user email",
+            "required" : true
+          }
+        },
+        "response" : {
+          "message" : "Password email resent"
+        }
+      }
+    ],
+    "tags": [
+      {
+        "action": "GET",
+        "uri": "\/tags",
+        "authentication" : true,
+        "description": "Getting tags",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "q" : {
+            "type" : "string",
+            "description" : "the name of the tag to search",
+            "required" : false
+
+          },
+          "popular" : {
+            "type" : "boolean",
+            "description" : "returning only popular tags",
+            "required" : false
+
+          }
+        },
+        "response" : {
+          "tags": [
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "last_photo" : "https://jkfslf.com/image.png",
+              "url": null
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/tags\/:id\/posts",
+        "authentication" : true,
+        "description": "Getting posts for that particular tag",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "posts": [
+          ]
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/tags\/:id",
+        "authentication" : true,
+        "description": "Getting a tag",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "tag":
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "last_photo" : "https://jkfslf.com/image.png",
+              "url": null
+            }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/tags\/exact",
+        "authentication" : true,
+        "description": "Getting a tag by exact name",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "q" : {
+            "type" : "string",
+            "description" : "The tag name",
+            "required" : true
+          }
+        },
+        "response" : {
+          "tag":
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "last_photo" : "https://jkfslf.com/image.png",
+              "url": null
+            }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/tags",
+        "authentication" : true,
+        "description": "Creating a tag",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "tag[name]" : {
+            "type" : "string",
+            "description" : "The tag name",
+            "required" : true
+          },
+          "tag[url]" : {
+            "type" : "string",
+            "description" : "The tag url",
+            "required" : true
+          }
+        },
+        "response" : {
+          "tag":
+            {
+              "id": 360,
+              "created_at": "2016-12-11T18:14:29.339Z",
+              "name": "voluptatem",
+              "last_photo" : "https://jkfslf.com/image.png",
+              "url": null
+            }
+        }
+      }
+    ],
+    "users": [
+      {
+        "action": "GET",
+        "uri": "\/users",
+        "authentication" : true,
+        "description": "Showing user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "account_type" : {
+            "type" : "string",
+            "description" : "Account type",
+            "required" : false
+          },
+          "q" : {
+            "type" : "string",
+            "description" : "query",
+            "required" : false
+          }
+        },
+        "response" : {
+          "users": [
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ],
+              "experiences": [
+
+              ],
+              "certificates": [
+
+              ]
+            }
+          ],
+          "meta": {
+            "current_page": 1,
+            "next_page": 2,
+            "prev_page": null,
+            "total_pages": 12,
+            "total_count": 222
+          }
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/users\/:id",
+        "authentication" : true,
+        "description": "Showing user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "users":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ],
+              "experiences": [
+
+              ],
+              "certificates": [
+
+              ]
+            }
+        }
+      },
+      {
+        "action": "POST",
+        "uri": "\/users",
+        "authentication" : true,
+        "description": "Creating a user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "user[email]" : {
+            "type" : "string",
+            "description" : "The user email",
+            "required" : true
+          },
+          "user[first_name]" : {
+            "type" : "string",
+            "description" : "The user first_name",
+            "required" : true
+          },
+          "user[last_name]" : {
+            "type" : "string",
+            "description" : "The user last_name",
+            "required" : true
+          },
+          "user[account_type]" : {
+            "type" : "string",
+            "description" : "The user account_type ( 'consumer', 'owner', 'stylist', 'ambassador')",
+            "required" : true
+          },
+          "user[password]" : {
+            "type" : "string",
+            "description" : "The user password",
+            "required" : true
+          },
+          "user[avatar_url]" : {
+            "type" : "string",
+            "description" : "The user avatar",
+            "required" : false
+          },
+          "user[avatar_cloudinary_id]" : {
+            "type" : "string",
+            "description" : "The user avatar cloudinary id",
+            "required" : false
+          },
+          "user[prof_desc]" : {
+            "type" : "string",
+            "description" : "The user prof description",
+            "required" : false
+          },
+          "user[years_exp]" : {
+            "type" : "string",
+            "description" : "The user years exp",
+            "required" : false
+          },
+          "user[career_opportunity]" : {
+            "type" : "string",
+            "description" : "The user career opportunities",
+            "required" : false
+          },
+          "user[brand_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][info]" : {
+            "type" : "string",
+            "description" : "The info of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][address]" : {
+            "type" : "string",
+            "description" : "The address of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][city]" : {
+            "type" : "string",
+            "description" : "The city of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][state]" : {
+            "type" : "string",
+            "description" : "The state of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][website]" : {
+            "type" : "string",
+            "description" : "The website of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][phone]" : {
+            "type" : "string",
+            "description" : "The phone of the brand",
+            "required" : false
+          },
+          "user[salon_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][address]" : {
+            "type" : "string",
+            "description" : "The address of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][city]" : {
+            "type" : "string",
+            "description" : "The city of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][state]" : {
+            "type" : "string",
+            "description" : "The state of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][zip]" : {
+            "type" : "string",
+            "description" : "The zip of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][phone]" : {
+            "type" : "string",
+            "description" : "The phone of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][website]" : {
+            "type" : "string",
+            "description" : "The website of the salon",
+            "required" : true
+          },
+          "user[experience_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the expereinces",
+            "required" : true
+          },
+          "user[certificate_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the certificates",
+            "required" : false
+          },
+          "user[educations_attributes][name]" : {
+            "type" : "integer",
+            "description" : "The name of the education",
+            "required" : false
+          },
+          "user[educations_attributes][year_from]" : {
+            "type" : "integer",
+            "description" : "The year from of the education",
+            "required" : false
+          },
+          "user[educations_attributes][degree_id]" : {
+            "type" : "integer",
+            "description" : "The degree id education",
+            "required" : false
+          },
+          "user[educations_attributes][website]" : {
+            "type" : "integer",
+            "description" : "The webite of the education",
+            "required" : false
+          },
+          "user[offerings_attributes][price]" : {
+            "type" : "integer",
+            "description" : "The name of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][service_id]" : {
+            "type" : "integer",
+            "description" : "The year from of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][category_id]" : {
+            "type" : "integer",
+            "description" : "The degree id offering",
+            "required" : false
+          }
+        },
+        "response" : {
+          "users":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ],
+              "experiences": [
+
+              ],
+              "certificates": [
+
+              ]
+            }
+        }
+      },
+      {
+        "action": "PUT",
+        "uri": "\/users\/:id",
+        "authentication" : true,
+        "description": "Updating a user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "params" : {
+          "user[email]" : {
+            "type" : "string",
+            "description" : "The user email",
+            "required" : true
+          },
+          "user[first_name]" : {
+            "type" : "string",
+            "description" : "The user first_name",
+            "required" : true
+          },
+          "user[last_name]" : {
+            "type" : "string",
+            "description" : "The user last_name",
+            "required" : true
+          },
+          "user[account_type]" : {
+            "type" : "string",
+            "description" : "The user account_type ( 'consumer', 'owner', 'stylist', 'brand')",
+            "required" : true
+          },
+          "user[password]" : {
+            "type" : "string",
+            "description" : "The user password",
+            "required" : true
+          },
+          "user[avatar_url]" : {
+            "type" : "string",
+            "description" : "The user avatar",
+            "required" : false
+          },
+          "user[avatar_cloudinary_id]" : {
+            "type" : "string",
+            "description" : "The user avatar cloudinary id",
+            "required" : false
+          },
+          "user[prof_desc]" : {
+            "type" : "string",
+            "description" : "The user prof description",
+            "required" : false
+          },
+          "user[years_exp]" : {
+            "type" : "string",
+            "description" : "The user years exp",
+            "required" : false
+          },
+          "user[career_opportunity]" : {
+            "type" : "string",
+            "description" : "The user career opportunities",
+            "required" : false
+          },
+          "user[brand_attributes][id]" : {
+            "type" : "string",
+            "description" : "The id of the brand",
+            "required" : true
+          },
+          "user[brand_attributes][_destroy]" : {
+            "type" : "string",
+            "description" : "The set the destroy flag to delete the brand",
+            "required" : false
+          },
+          "user[brand_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][address]" : {
+            "type" : "string",
+            "description" : "The address of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][city]" : {
+            "type" : "string",
+            "description" : "The city of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][state]" : {
+            "type" : "string",
+            "description" : "The state of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][website]" : {
+            "type" : "string",
+            "description" : "The website of the brand",
+            "required" : false
+          },
+          "user[brand_attributes][phone]" : {
+            "type" : "string",
+            "description" : "The phone of the brand",
+            "required" : false
+          },
+          "user[salon_attributes][id]" : {
+            "type" : "string",
+            "description" : "The id of the salon to update",
+            "required" : true
+          },
+          "user[salon_attributes][_destroy]" : {
+            "type" : "string",
+            "description" : "Set the destroy tag to delete the salon",
+            "required" : false
+          },
+          "user[salon_attributes][name]" : {
+            "type" : "string",
+            "description" : "The name of the salon",
+            "required" : true
+          },
+          "user[salon_attributes][address]" : {
+            "type" : "string",
+            "description" : "The address of the salon",
+            "required" : false
+          },
+          "user[salon_attributes][city]" : {
+            "type" : "string",
+            "description" : "The city of the salon",
+            "required" : false
+          },
+          "user[salon_attributes][state]" : {
+            "type" : "string",
+            "description" : "The state of the salon",
+            "required" : false
+          },
+          "user[salon_attributes][zip]" : {
+            "type" : "string",
+            "description" : "The zip of the salon",
+            "required" : false
+          },
+          "user[salon_attributes][phone]" : {
+            "type" : "string",
+            "description" : "The phone of the salon",
+            "required" : false
+          },
+          "user[salon_attributes][website]" : {
+            "type" : "string",
+            "description" : "The website of the salon",
+            "required" : false
+          },
+          "user[experience_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the expereinces",
+            "required" : false
+          },
+          "user[certificate_ids]" : {
+            "type" : "array",
+            "description" : "The ids of the certificates",
+            "required" : false
+          },
+          "user[educations_attributes][id]" : {
+            "type" : "integer",
+            "description" : "The ids of the education to update",
+            "required" : false
+          },
+          "user[educations_attributes][_destroy]" : {
+            "type" : "integer",
+            "description" : "The set the destroy flag to delete the education",
+            "required" : false
+          },
+          "user[educations_attributes][name]" : {
+            "type" : "integer",
+            "description" : "The name of the education",
+            "required" : false
+          },
+          "user[educations_attributes][year_from]" : {
+            "type" : "integer",
+            "description" : "The year from of the education",
+            "required" : false
+          },
+          "user[educations_attributes][degree_id]" : {
+            "type" : "integer",
+            "description" : "The degree id education",
+            "required" : false
+          },
+          "user[educations_attributes][website]" : {
+            "type" : "integer",
+            "description" : "The webite of the education",
+            "required" : false
+          },
+          "user[offerings_attributes][id]" : {
+            "type" : "integer",
+            "description" : "The ids of the offering to update",
+            "required" : false
+          },
+          "user[offerings_attributes][_destroy]" : {
+            "type" : "integer",
+            "description" : "The set the destroy flag to delete the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][price]" : {
+            "type" : "integer",
+            "description" : "The name of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][service_id]" : {
+            "type" : "integer",
+            "description" : "The year from of the offering",
+            "required" : false
+          },
+          "user[offerings_attributes][category_id]" : {
+            "type" : "integer",
+            "description" : "The degree id offering",
+            "required" : false
+          }
+        },
+        "response" : {
+          "users":
+            {
+              "id": 3268,
+              "auth_token": "AkDUSRgCBwdiFm6e37S7",
+              "email": "leila@hodkiewicz.org",
+              "first_name": "Adah",
+              "last_name": "Collier",
+              "account_type": "consumer",
+              "is_following": false,
+              "salon": null,
+              "brand": null,
+              "avatar_url": "https:\/\/robohash.org\/porroullamnemo.png?size=300x300&set=set1",
+              "avatar_cloudinary_id": "1746",
+              "share_facebook": false,
+              "share_twitter": false,
+              "share_instagram": false,
+              "share_pinterest": false,
+              "share_tumblr": false,
+              "prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",
+              "years_exp": 1,
+              "career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",
+              "likes": [
+
+              ],
+              "educations": [
+
+              ],
+              "offerings": [
+
+              ],
+              "experiences": [
+
+              ],
+              "certificates": [
+
+              ]
+            }
+        }
+      },
+      {
+        "action": "DELETE",
+        "uri": "\/users\/:id",
+        "authentication" : true,
+        "description": "Deleting a user",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response" : {
+          "status": 204
+        }
+      },
+      {
+        "action": "GET",
+        "uri": "\/users\/:id\/posts",
+        "authentication" : true,
+        "description": "Getting a users's posts",
+        "headers": {
+          "Accept": "application\/vnd.hairfolio.v1",
+          "Content-Type": "application\/json"
+        },
+        "response": {
+          "posts": [{
+            "id": 488,
+            "created_at": "2016-12-14T23:34:26.103Z",
+            "description": "Nobis quisquam deserunt aut corporis. Accusantium recusandae vel similique. Omnis sit debitis et omnis harum qui vitae. Sit reiciendis molestiae nulla voluptatibus explicabo earum.",
+            "likes_count": 0,
+            "comments_count": 0,
+            "photos": [
+              {
+                "id": 305,
+                "created_at": "2016-12-14T23:34:26.105Z",
+                "asset_url": "http:\/\/schimmel.name\/darien",
+                "post_id": 488,
+                "labels": [
+                  {
+                    "id": 254,
+                    "created_at": "2016-12-14T23:34:26.107Z",
+                    "position_top": 1,
+                    "position_left": 1,
+                    "label_type": "hash_tag",
+                    "tag": {
+                      "id": 318,
+                      "created_at": "2016-12-14T23:34:25.906Z",
+                      "name": "expedita",
+                      "url": null
+                    },
+                    "photo_id": 305,
+                    "formulas": [
+                      {
+                        "id": 207,
+                        "created_at": "2016-12-14T23:34:26.109Z",
+                        "post_id": null,
+                        "service": {
+                          "id": 275,
+                          "created_at": "2016-12-14T23:34:25.927Z",
+                          "name": "Jenkins Group",
+                          "position": 1
+                        },
+                        "time": 1,
+                        "weight": 1,
+                        "volume": 1,
+                        "treatments": [
+                          {
+                            "id": 207,
+                            "created_at": "2016-12-14T23:34:26.111Z",
+                            "color": {
+                              "id": 230,
+                              "created_at": "2016-12-14T23:34:25.962Z",
+                              "harmony_id": 242,
+                              "code": "jdij2d390",
+                              "start_hex": "996a96",
+                              "end_hex": "41ffa9"
+                            },
+                            "weight": 1
+                          }
+                        ],
+                        "label_id": 254
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "videos": [
+              {
+                "id": 2,
+                "asset_url": "http:\/\/larkinschumm.biz\/destini.stiedemann",
+                "post_id": 488,
+                "created_at": "2016-12-14T23:34:26.114Z",
+                "updated_at": "2016-12-14T23:34:26.114Z"
+              }
+            ]
+          }
+        ],
+        "meta": {
+          "current_page": 1,
+          "next_page": 2,
+          "prev_page": null,
+          "total_pages": 12,
+          "total_count": 222
+        }
+        }
+      }
+    ]
+  }
+}

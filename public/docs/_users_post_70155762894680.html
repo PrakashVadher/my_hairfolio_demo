@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>/users</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link type="text/css" rel="stylesheet" href="/docs/assets/css/main.css" />
+  </head>
+  <body>
+    <div id="page">
+
+      <div id="header-outer">
+        <div id="header">
+          <a href="/docs" id="logo" title="Home">Hairfolio API Docs</a>
+
+          <ul id="title-nav">
+            <li><a href="/docs/overview.html">Overview</a></li>
+            <li><a href="/docs/authentication.html">Authentication</a></li>
+            <li><a href="/docs/index.html">Resources</a></li>
+            <li><a href="/docs/errors.html">Errors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="content-outer">
+        <div class="page-header">
+          <h1>POST /users</h1>
+        </div>
+
+        <div id="content-main">
+          <div class="field field-el">
+            <h2>Description</h2>
+            <p>Creating a user</p>
+          </div>
+
+	  
+	  <div class="field">
+            <h2>Headers</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">Accept</span>
+                  <p>application/vnd.hairfolio.v1</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">Content-Type</span>
+                  <p>application/json</p>
+                </div>
+              
+            </div>
+          </div>
+	  
+
+          <div class="field">
+            <h2>Parameters</h2>
+            <div class="odd">
+              
+                <div class="parameter">
+                  <span class="param">user[email]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The user email</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[first_name]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The user first_name</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[last_name]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The user last_name</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[account_type]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The user account_type ( 'consumer', 'owner', 'stylist', 'ambassador')</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[password]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The user password</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[avatar_url]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The user avatar</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[avatar_cloudinary_id]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The user avatar cloudinary id</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[prof_desc]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The user prof description</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[years_exp]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The user years exp</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[career_opportunity]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The user career opportunities</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][name]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The name of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][info]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The info of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][address]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The address of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][city]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The city of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][state]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The state of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][website]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The website of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[brand_attributes][phone]
+                    <span>optional, type: string</span>
+                  </span>
+                  <p>The phone of the brand</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][name]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The name of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][address]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The address of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][city]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The city of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][state]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The state of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][zip]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The zip of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][phone]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The phone of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[salon_attributes][website]
+                    <span>required, type: string</span>
+                  </span>
+                  <p>The website of the salon</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[experience_ids]
+                    <span>required, type: array</span>
+                  </span>
+                  <p>The ids of the expereinces</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[certificate_ids]
+                    <span>optional, type: array</span>
+                  </span>
+                  <p>The ids of the certificates</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[educations_attributes][name]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The name of the education</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[educations_attributes][year_from]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The year from of the education</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[educations_attributes][degree_id]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The degree id education</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[educations_attributes][website]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The webite of the education</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[offerings_attributes][price]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The name of the offering</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[offerings_attributes][service_id]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The year from of the offering</p>
+                </div>
+              
+                <div class="parameter">
+                  <span class="param">user[offerings_attributes][category_id]
+                    <span>optional, type: integer</span>
+                  </span>
+                  <p>The degree id offering</p>
+                </div>
+              
+            </div>
+          </div>
+
+          
+
+          
+            <div class="group-example-request">
+              <h2>Example Response</h2>
+              <div class="content">
+                <pre class="prettyprint">{<br/>&nbsp;&nbsp;&nbsp;&nbsp;"users": {<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"id": 3268,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"auth_token": "AkDUSRgCBwdiFm6e37S7",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"email": "leila@hodkiewicz.org",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"first_name": "Adah",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"last_name": "Collier",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"account_type": "consumer",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"is_following": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"salon": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"brand": null,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_url": "https://robohash.org/porroullamnemo.png?size=300x300&set=set1",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"avatar_cloudinary_id": "1746",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_facebook": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_twitter": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_instagram": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_pinterest": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"share_tumblr": false,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"prof_desc": "Sit consectetur quasi exercitationem veritatis quas cumque deserunt. Qui deserunt velit. Ut repudiandae ex sequi aut. Ut ratione rerum reprehenderit accusamus non amet porro. Et ipsam iste quo dolor ea voluptatum velit.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"years_exp": 1,<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"career_opportunity": "Delectus veritatis repellendus eum laboriosam. Expedita molestiae aperiam tenetur. Molestias quo quaerat similique nulla ipsa aperiam dolores.",<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"likes": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"educations": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"offerings": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"experiences": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;],<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"certificates": [<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br/>&nbsp;&nbsp;&nbsp;&nbsp;}<br/>}</pre>
+              </div>
+            </div>
+          
+        </div>
+
+        <div id="sidebar-last">
+          <div class="block api-doc-block">
+            <h2>Resource Information</h2>
+            <table>
+              <tbody>
+                <tr>
+                  <td>API Version</td>
+                  <td>1.0</td>
+                </tr>
+                <tr>
+                  <td>HTTP Method</td>
+                  <td>POST</td>
+                </tr>
+                <tr>
+                  <td>Login Required</td>
+                  <td>false</td>
+                </tr>
+                <tr>
+                  <td>Response Format</td>
+                  <td>application/json</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer-outer">
+        <div id="footer">Hairfolio API Docs &copy; 2013</div>
+      </div>
+
+    </div>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  </body>
+</html>

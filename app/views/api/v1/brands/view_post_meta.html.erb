@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (/windows phone/i.test(userAgent)){
+            setTimeout(function () { window.location.href="http://180.211.99.165:8080/jaisal/hairfolio/postdetails/"+btoa(<%= @post.id %>)+"?ref_code=<%= @unique_code %>"; }, 25);
+            window.location ="hairfolio://ASDF/"+<%= @post.id %>
+        }
+        if (/android/i.test(userAgent)){
+            setTimeout(function () { window.location = window.location.href="http://180.211.99.165:8080/jaisal/hairfolio/postdetails/"+btoa(<%= @post.id %>)+"?ref_code=<%= @unique_code %>"; }, 25);
+            window.location ="hairfolio://ASDF/"+<%= @post.id %>
+        }
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream){
+            setTimeout(function () { window.location = window.location.href="http://180.211.99.165:8080/jaisal/hairfolio/postdetails/"+btoa(<%= @post.id %>)+"?ref_code=<%= @unique_code %>"; }, 25);
+            window.location ="hairfolio://ASDF/"+<%= @post.id %>
+        }
+    }else {
+        window.location.href="http://180.211.99.165:8080/jaisal/hairfolio/postdetails/"+btoa(<%= @post.id %>)+"?ref_code=<%= @unique_code %>";
+    }
+</script>

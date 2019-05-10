@@ -1,0 +1,98 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  hello: "Hello world"
+
+  errors:
+    param_invalid: "Parameters invalid or having unknown format"
+    not_authorized: 'You are not authorized to perform this action'
+    primary_card: 'You cannot delete primary card'
+    standard_error: 'Something went wrong.'
+    stripe_error: 'There is some problem processing your payment.'
+
+  warehouse:
+    sessions:
+      delete: "User loged out successfully."
+      invalid_email_password: 'Invalid email/password.'
+
+  products:
+    create: 'Product created successfully.'
+    update: 'Product updated successfully.'
+    destroy: 'Product deleted successfully.'
+
+  orders:
+    update: 'Order updated successfully.'
+    pending_to_progress_allowed: 'You only can move pending order to progress state'
+    progress_to_delivered_allowed: 'You only can move pending order to progress state'
+    delivered_to_state_change_not_allowed: 'You can not change state of delivered order'
+
+  notifications:
+    order_created:
+      message: "Your order with order number %{order_number} has been created successfully."
+      title: "Order Created"
+    order_delivered:
+      message: "Your order with order number %{order_number} has been delivered successfully."
+      title: "Order Delivered"
+    order_confirmed:
+      message: "Your order with order number %{order_number} has been confirmed."
+      title: "Order Confirmed"
+    order_in_progress:
+      message: "Your order with order number %{order_number} is in progress now."
+      title: "Order In Progress"
+
+  exceptions:
+    quantity_exceed_error: 'Quantity ordered exceeds available quantity.'
+    cart_empty_error: 'Cart is empty.'
+    card_exist: 'Card already exist'
+    bank_account_exist: 'Bank account already exist'
+
+  coupons:
+    not_found: 'Coupon not found'
+    description: "You have earned %{discount_percentage}% discount coupon: %{coupon_code}"
+
+  cards:
+    not_found: 'Card not found'
+
+  address:
+    not_found: 'Address not found'
+
+  bank_account:
+    created: 'Bank account details saved successfully'
+    updated: 'Bank account details updates successfully'
+    deleted: 'Bank account details deleted successfully'
+    not_associated: 'Bank account not associated'
+
+  wallet:
+    payout_success: 'Amount transferred successfully'
+    insufficient_amount: 'Your wallet have insufficient balance to payout'
+
+  sales:
+    not_found: 'Sale not found'
+
+  claims:
+    created: 'Salon claimed'
+    email_taken: 'is already taken by another user'
+    already_claimed: 'Salon already claimed by you'
+    already_claimed_another_salon: 'Another salon is already claimed by this email'
+    can_not_claimed: 'already belongs to other user'
+    disaprove_not_allow: 'Claim can not be disapproved'
+    can_not_be_approved: 'This salon belongs to another user, you can not approve the claim'
